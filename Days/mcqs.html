@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>MCQ Assessment</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="mcqs.css">
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <h1 id="moduleName">Loading...</h1>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- Quiz Setup -->
+  <div id="setup" class="section">
+    <label>Select number of questions:</label>
+    <select id="questionSelect">
+      <option value="5">5</option>
+      <option value="10">10</option>
+      <option value="15">15</option>
+      <option value="20">20</option>
+      <option value="all">All</option>
+    </select>
+
+    <label style="margin-left:20px;">Timer (minutes):</label>
+    <select id="timeSelect">
+      <option value="1">1</option>
+      <option value="3">3</option>
+      <option value="5">5</option>
+      <option value="no time">no time</option>
+    </select>
+
+    <button onclick="beginQuiz()">Start Quiz</button>
+  </div>
+
+  <!-- Quiz Questions -->
+  <div id="question-box" class="section" style="display:none">
+    <div id="counter" style="font-weight:600;margin-bottom:10px;"></div>
+    <h2 id="question"></h2>
+    <div class="options">
+      <button id="opt0" class="option"></button>
+      <button id="opt1" class="option"></button>
+      <button id="opt2" class="option"></button>
+      <button id="opt3" class="option"></button>
+    </div>
+    <button onclick="nextQuestion()" style="margin-top:15px;">Next</button>
+    <div id="timer" style="margin-top:10px;font-weight:600;">00:00</div>
+  </div>
+
+  <!-- Result Screen -->
+  <div id="resultScreen" class="section" style="display:none">
+    <h2>Quiz Result</h2>
+    <p id="totalScore"></p>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Question</th>
+          <th>Correct Answer</th>
+          <th>Your Answer</th>
+          <th>Explanation</th>
+        </tr>
+      </thead>
+      <tbody id="answerTable"></tbody>
+    </table>
+
+    <div style="margin-top:20px;">
+      <button onclick="restartQuiz()">Retry</button>
+<a href="/index.html" 
+   style="display:inline-block;
+          margin-bottom:15px;
+          background:#121d36;
+          padding:7px 14px;
+          border-radius:10px;
+          border:1px solid rgba(255,255,255,.1);
+          color:#9aa6c7;
+          text-decoration:none;
+          transition:.2s;"
+   onmouseover="this.style.background='#1e2b4d'; this.style.color='#fff';"
+   onmouseout="this.style.background='#121d36'; this.style.color='#9aa6c7';">
+   ⬅ Back
+</a>
+    </div>
+  </div>
+
+</div>
+
+<script src="questionBanks.js"></script>
+<script src="mcqsLogic.js"></script>
+</body>
+</html>

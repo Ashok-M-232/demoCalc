@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Day 1 - Cyber Security</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script src="pdfDownload.js"></script>
+
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Poppins',sans-serif;background:#0b1221;color:#fff;line-height:1.6}
+  header{width:100%;padding:25px 0;background:#0f1830;border-bottom:1px solid rgba(255,255,255,.1)}
+  .container{width:90%;max-width:1150px;margin:auto}
+  h1{font-size:34px;font-weight:700;margin-bottom:5px;letter-spacing:.5px}
+  .subtitle{color:#9da6c6;margin-bottom:10px}
+  .tag{display:inline-block;margin-top:10px;padding:6px 12px;border-radius:8px;background:linear-gradient(135deg,#1f2b4a,#2d3c6b);border:1px solid rgba(255,255,255,.08);font-size:12px;letter-spacing:.4px}
+
+  .section{margin-top:25px;background:linear-gradient(145deg,#0f1830 20%,#151f45 100%);border:1px solid rgba(255,255,255,.1);border-radius:18px;padding:22px;box-shadow:0 20px 40px rgba(0,0,0,.4);transition:0.3s}
+  .section:hover{box-shadow:0 25px 50px rgba(0,0,0,.6)}
+  .section h2{font-size:22px;margin-bottom:12px;font-weight:600;color:#8bc5ff}
+  .section h3{font-size:18px;margin-top:15px;margin-bottom:8px;color:#d7e4ff}
+  ul{margin-left:20px;margin-top:8px}
+  ul li{margin-bottom:6px}
+  .highlight{color:#7dd8ff;font-weight:600}
+
+  .footer{margin:35px 0 50px 0;text-align:center;color:#9aa6c7;font-size:14px}
+
+  .back{display:inline-block;margin-bottom:15px;background:#121d36;padding:7px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.1);color:#9aa6c7;text-decoration:none;transition:.2s}
+  .back:hover{background:#1e2b4d;color:#fff}
+
+  .mcq-btn{display:inline-block;padding:14px 28px;background:linear-gradient(135deg,#1c2d5b,#334b91);border-radius:12px;color:white;font-weight:600;font-size:16px;text-decoration:none;border:1px solid rgba(255,255,255,.3);transition:.3s}
+  .mcq-btn:hover{background:linear-gradient(135deg,#334b91,#1c2d5b);transform:translateY(-2px);box-shadow:0 10px 25px rgba(0,0,0,.5)}
+  .mcq-container{text-align:center;margin:40px 0}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <a class="back" href="index.html">⬅ Back</a>
+    <h1>DAY 1 — Cyber Security</h1>
+    <p class="subtitle">Professional Explanation — SOC / SIEM / Blue Team</p>
+    <span class="tag">High Standard Content</span>
+  </div>
+</header>
+
+<div class="container">
+
+  <div class="section">
+    <h2>Cyber Security — Professional Definition</h2>
+    <p>Cyber Security is the practice of protecting an organization’s information systems, networks, applications, data, and digital infrastructure from cyber threats such as hackers, malware, ransomware, insider threats, and advanced persistent threats (APT).</p>
+
+    <h3>CIA Triad</h3>
+    <ul>
+      <li><b>Confidentiality</b> – Only authorized users can access information</li>
+      <li><b>Integrity</b> – Data remains accurate and unaltered</li>
+      <li><b>Availability</b> – Systems remain up and running without disruption</li>
+    </ul>
+    <p>Cyber Security professionals defend, detect, investigate, and respond to cyber threats to ensure business continuity and data protection.</p>
+  </div>
+
+  <div class="section">
+    <h2>🛡️ Blue Team / SOC / Incident Response (Professional Meaning)</h2>
+    <ul>
+      <li><b>Blue Team</b> – Defensive security team responsible for protecting the organization</li>
+      <li><b>SOC (Security Operations Center)</b> – A centralized team that continuously monitors and secures the organization’s IT environment</li>
+      <li><b>Incident Response Team</b> – Handles confirmed security incidents, mitigation, containment, and recovery</li>
+    </ul>
+    <p>They mainly operate using:</p>
+    <ul>
+      <li>➡️ SIEM tools</li>
+      <li>➡️ Threat intelligence</li>
+      <li>➡️ Security controls and policies</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>🧠 SIEM — Professional Definition</h2>
+    <p>SIEM (Security Information and Event Management) is a security platform that:</p>
+    <ul>
+      <li>Collects logs from multiple devices</li>
+      <li>Correlates security events</li>
+      <li>Detects suspicious/malicious activities</li>
+      <li>Generates alerts</li>
+      <li>Supports investigation & incident response</li>
+    </ul>
+    <h3>Example SIEM Platforms</h3>
+    <p>Microsoft Sentinel, Splunk, IBM QRadar, ArcSight.</p>
+
+    <h3>📦 SIEM Technical Components</h3>
+    <ul>
+      <li><b>SIM</b> — Security Information Management
+        <ul>
+          <li>Long-term log storage</li>
+          <li>Compliance & audits</li>
+          <li>Historical data analysis</li>
+        </ul>
+      </li>
+      <li><b>SEM</b> — Security Event Management
+        <ul>
+          <li>Real-time monitoring</li>
+          <li>Alert generation</li>
+          <li>Event correlation</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>🧾 Data Sources in SIEM (Real-World Example)</h2>
+    <p>Organizations like HCL, TCS, SBI, TATA generate huge security logs from:</p>
+    <ul>
+      <li>Endpoints: Laptops, Desktops</li>
+      <li>Servers: Application, Database, Web</li>
+      <li>Network Devices: Routers, Switches, Firewalls</li>
+      <li>Cloud Platforms: Azure, AWS, GCP</li>
+      <li>Security Tools: Antivirus, EDR, DLP, IDS/IPS</li>
+      <li>Applications & Databases</li>
+    </ul>
+    <p>This is called: <b>Centralized Log Management</b></p>
+    <p>Logs are:</p>
+    <ul>
+      <li>Raw security data</li>
+      <li>Huge in volume</li>
+      <li>Critical for security analysis</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>⚙️ Core Functions of SIEM (Industry Standard)</h2>
+    <ul>
+      <li><b>1️⃣ Collection</b> — Log ingestion from multiple sources</li>
+      <li><b>2️⃣ Detection</b> — Identify threats using:
+        <ul>
+          <li>Correlation rules</li>
+          <li>Use cases</li>
+          <li>Threat Intelligence</li>
+        </ul>
+      </li>
+      <li><b>3️⃣ Investigation</b> — Analysts investigate alerts using:
+        <ul>
+          <li>Dashboards</li>
+          <li>Timeline analysis</li>
+          <li>Queries (KQL in Sentinel)</li>
+        </ul>
+      </li>
+      <li><b>4️⃣ Response</b> — Containment actions, automated response (SOAR), incident closure & reporting</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>🏢 SOC (Security Operations Center) — Professional Meaning</h2>
+    <p>A SOC is a dedicated command center responsible for:</p>
+    <ul>
+      <li>Continuous 24/7 monitoring</li>
+      <li>Threat detection</li>
+      <li>Incident investigation</li>
+      <li>Threat hunting</li>
+      <li>Incident response</li>
+      <li>Reporting & compliance</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>👨‍💻 SOC Roles and Responsibilities</h2>
+    <h3>🔹 SOC L1 — Security Analyst (Monitoring Analyst)</h3>
+    <ul>
+      <li>Monitor SIEM alerts 24/7</li>
+      <li>Perform initial triage</li>
+      <li>Identify False Positive vs True Positive</li>
+      <li>Follow SOPs (Standard Operating Procedures)</li>
+      <li>Prepare incident reports & documentation</li>
+    </ul>
+    <h3>🔹 SOC L2 — Senior Security Analyst</h3>
+    <ul>
+      <li>Deep-dive investigation</li>
+      <li>Correlation of multiple events</li>
+      <li>Root Cause Analysis (RCA)</li>
+      <li>Writing Detection Rules</li>
+      <li>Writing KQL Queries in Microsoft Sentinel</li>
+      <li>Guiding L1 analysts</li>
+    </ul>
+    <h3>🔹 SOC L3 — SIEM Engineer / Security Architect</h3>
+    <ul>
+      <li>SIEM architecture & implementation</li>
+      <li>Onboarding log sources</li>
+      <li>Playbook & SOAR automation</li>
+      <li>Fine-tuning alerts</li>
+      <li>Advanced integration & configuration</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>🏢 SOC Deployment Models</h2>
+    <ul>
+      <li><b>MSSP</b> — Security handled by third-party companies</li>
+      <li><b>In-House SOC</b> — Security handled internally within the organization</li>
+    </ul>
+  </div>
+  <div class="section">
+  <h2>SOC Deployment Models — Explained</h2>
+  <p>A <b>Security Operations Center (SOC)</b> can be deployed in different ways depending on the organization’s size, resources, and security strategy. The two primary deployment models are:</p>
+
+  <h3>1️⃣ MSSP — Managed Security Service Provider</h3>
+  <ul>
+    <li><b>Definition:</b> MSSP is a third-party service provider that monitors, manages, and responds to security threats on behalf of an organization.</li>
+    <li><b>Key Features:</b>
+      <ul>
+        <li>24/7 monitoring and alerting</li>
+        <li>Threat detection and response handled externally</li>
+        <li>Security expertise without hiring a full internal team</li>
+        <li>Often includes SIEM as a service, managed firewalls, and incident response</li>
+      </ul>
+    </li>
+    <li><b>Advantages:</b>
+      <ul>
+        <li>Cost-effective for small-to-medium organizations</li>
+        <li>Access to advanced security tools and expertise</li>
+        <li>Reduced operational overhead for internal staff</li>
+      </ul>
+    </li>
+    <li><b>Considerations:</b>
+      <ul>
+        <li>Less control over data and operations</li>
+        <li>Dependent on service-level agreements (SLAs)</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3>2️⃣ In-House SOC</h3>
+  <ul>
+    <li><b>Definition:</b> An internal team fully owned and operated by the organization to handle all security operations.</li>
+    <li><b>Key Features:</b>
+      <ul>
+        <li>Complete control over monitoring, investigation, and response</li>
+        <li>Team works directly with internal systems, applications, and networks</li>
+        <li>Can integrate closely with IT, DevOps, and compliance teams</li>
+      </ul>
+    </li>
+    <li><b>Advantages:</b>
+      <ul>
+        <li>Maximum visibility and control over security events</li>
+        <li>Customized security policies and workflows</li>
+        <li>Faster response times for critical incidents</li>
+      </ul>
+    </li>
+    <li><b>Considerations:</b>
+      <ul>
+        <li>High cost to set up and maintain</li>
+        <li>Requires skilled personnel and ongoing training</li>
+        <li>Infrastructure and tool investments are needed</li>
+      </ul>
+    </li>
+  </ul>
+
+  <p><b>Summary:</b></p>
+  <table style="width:100%;border-collapse:collapse;margin-top:10px;">
+    <tr style="background:#1c2d5b;color:#fff;">
+      <th style="padding:8px;border:1px solid rgba(255,255,255,.2)">Model</th>
+      <th style="padding:8px;border:1px solid rgba(255,255,255,.2)">Ownership</th>
+      <th style="padding:8px;border:1px solid rgba(255,255,255,.2)">Cost</th>
+      <th style="padding:8px;border:1px solid rgba(255,255,255,.2)">Control</th>
+      <th style="padding:8px;border:1px solid rgba(255,255,255,.2)">Expertise</th>
+    </tr>
+    <tr>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.2)">MSSP</td>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.2)">Third-party</td>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.2)">Lower</td>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.2)">Medium</td>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.2)">Provided externally</td>
+    </tr>
+    <tr>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.2)">In-House SOC</td>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.2)">Organization</td>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.2)">Higher</td>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.2)">High</td>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.2)">Provided internally</td>
+    </tr>
+  </table>
+
+  <p>💡 <b>Tip:</b> Some organizations use a hybrid approach, combining internal SOC staff with MSSPs to balance cost, expertise, and control.</p>
+</div>
+
+<div class="section">
+  <h2>Events & Kill Chain — Explained</h2>
+  <p>In Cyber Security, monitoring events is critical for detecting and responding to threats. Events can be categorized as:</p>
+  
+  <h3>1️⃣ Normal Event</h3>
+  <p>Normal events represent expected behavior in the system, network, or application. These are routine logs and actions that follow standard operational patterns.</p>
+  <ul>
+    <li>Example: User login during office hours</li>
+    <li>Example: Scheduled backups running as planned</li>
+    <li>Example: Regular file access by authorized users</li>
+  </ul>
+  
+  <h3>2️⃣ Abnormal Event</h3>
+  <p>Abnormal events are unexpected or suspicious activities that may indicate potential security incidents. These require investigation by the SOC team.</p>
+  <ul>
+    <li>Example: Multiple failed login attempts from the same user</li>
+    <li>Example: Unusual access to sensitive files outside office hours</li>
+    <li>Example: Unexpected network traffic spikes</li>
+  </ul>
+
+  <h3>Cyber Kill Chain & MITRE ATT&CK</h3>
+  <p>The <b>Cyber Kill Chain</b> is a framework that describes the stages of a cyber attack. Combined with <b>MITRE ATT&CK</b>, it helps SOC teams understand attacker techniques, tactics, and procedures (TTPs).</p>
+  <p><b>Typical Attack Flow:</b></p>
+  <ul>
+    <li><b>Initial Access</b> — Gaining entry into the system (phishing, exploit, stolen credentials)</li>
+    <li><b>Privilege Escalation</b> — Attacker gains higher access rights</li>
+    <li><b>Lateral Movement</b> — Moving across network to find critical assets</li>
+    <li><b>Exfiltration</b> — Stealing data from the organization</li>
+  </ul>
+
+  <h3>Brute Force Attack Example</h3>
+  <p>Here’s a real-world scenario illustrating an abnormal event triggering a SOC investigation:</p>
+  <ul>
+    <li>User <b>RAJESH43</b> attempts multiple logins with incorrect passwords.</li>
+    <li>Suddenly, a login succeeds unexpectedly.</li>
+    <li>SIEM generates an <b>alert</b> for potential compromise.</li>
+    <li>The SOC team investigates to confirm if the account was compromised or if it was a false positive.</li>
+  </ul>
+
+  <h3>Key Takeaways:</h3>
+  <ul>
+    <li>Normal events help establish a baseline of expected behavior.</li>
+    <li>Abnormal events are early indicators of potential attacks.</li>
+    <li>Understanding the Cyber Kill Chain and MITRE ATT&CK helps SOC teams proactively detect, respond, and prevent attacks.</li>
+  </ul>
+</div>
+
+
+  <!-- MCQ Button -->
+  <div class="mcq-container">
+    <a href="mcqs.html?day=day1" class="mcq-btn">🚀 Test Your Knowledge – Day 1 MCQs</a>
+  </div>
+<button id="pdfDownload" class="mcq-btn">📄 Download / Print PDF</button>
+
+
+
+</div>
+
+<div class="footer">
+  Day 1 Completed — High Standard Cyber Security Content
+</div>
+
+</body>
+</html>
