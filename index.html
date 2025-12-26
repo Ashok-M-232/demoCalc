@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Secret Calculator Unlock</title>
+<title>Cyber Security Learning</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 <style>
   * {box-sizing: border-box;}
@@ -18,51 +18,7 @@
     color:white;
     flex-direction:column;
   }
-  #calculator{
-    background: linear-gradient(145deg,#1e293b,#020617);
-    padding: 20px;
-    border-radius: 20px;
-    box-shadow:0 10px 20px rgba(0,0,0,.5);
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-  }
-  #display{
-    width: 220px;
-    height: 50px;
-    margin-bottom: 15px;
-    background:#020617;
-    border-radius: 10px;
-    text-align:right;
-    padding:10px;
-    font-size:22px;
-    overflow-x:auto;
-  }
-  .buttons{
-    display:grid;
-    grid-template-columns:repeat(4,60px);
-    gap:10px;
-  }
-  button{
-    padding:15px;
-    font-size:18px;
-    border:none;
-    border-radius:10px;
-    cursor:pointer;
-    background:#1e293b;
-    color:white;
-    transition: transform .1s ease;
-  }
-  button:hover{
-    transform: scale(1.05);
-    background:#334155;
-  }
-  #message{
-    margin-top:10px;
-    height:20px;
-    color:#ff6b6b;
-    font-weight:600;
-  }
+
   .container{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -71,6 +27,7 @@
     max-width:700px;
     margin-top:30px;
   }
+
   .card{
     background:linear-gradient(145deg,#1e293b,#020617);
     border-radius:22px;
@@ -91,32 +48,10 @@
 </head>
 <body>
 
-<div id="calculator">
-  <div id="display">0</div>
-  <div class="buttons">
-    <button onclick="press('7')">7</button>
-    <button onclick="press('8')">8</button>
-    <button onclick="press('9')">9</button>
-    <button onclick="press('+')">+</button>
+<h1 style="margin-bottom:20px; font-size:36px; text-align:center;">Cyber Security Learning</h1>
+<p style="text-align:center; opacity:0.8;">Click below to open your study content</p>
 
-    <button onclick="press('4')">4</button>
-    <button onclick="press('5')">5</button>
-    <button onclick="press('6')">6</button>
-    <button onclick="press('-')">-</button>
-
-    <button onclick="press('1')">1</button>
-    <button onclick="press('2')">2</button>
-    <button onclick="press('3')">3</button>
-    <button onclick="press('*')">*</button>
-
-    <button onclick="press('0')">0</button>
-    <button onclick="clearDisplay()">C</button>
-    <button onclick="calculate()">=</button>
-  </div>
-  <div id="message"></div>
-</div>
-
-<div class="container" id="content" style="display:none;">
+<div class="container">
   <a href="./Days/day1.html">
     <div class="card">
       <div class="title">Day 1</div>
@@ -129,43 +64,18 @@
       <div class="text">Click to open Day 2 content</div>
     </div>
   </a>
+    <a href="./Days/day3.html">
+    <div class="card">
+      <div class="title">Day 3</div>
+      <div class="text">Click to open Day 3 content</div>
+    </div>
+  </a>
+    <a href="./Days/day4.html">
+    <div class="card">
+      <div class="title">Day 4</div>
+      <div class="text">Click to open Day 4 content</div>
+    </div>
 </div>
-
-<script>
-let display = '';
-const secretResult = 2397537629; // Set your secret result here
-
-function press(val){
-  display += val;
-  document.getElementById('display').innerText = display;
-}
-
-function clearDisplay(){
-  display = '';
-  document.getElementById('display').innerText = '0';
-  document.getElementById('message').innerText = '';
-}
-
-function calculate(){
-  try {
-    if(/[^\d+]/.test(display)) throw "Development Error"; // invalid chars
-    const result = eval(display); // only +,-,*
-    if(isNaN(result)) throw "Development Error";
-
-    document.getElementById('display').innerText = result;
-    display = result.toString();
-
-    if(result === secretResult){
-      document.getElementById('calculator').style.display = 'none';
-      document.getElementById('content').style.display = 'grid';
-    }
-  } catch(e){
-    document.getElementById('message').innerText = "⚠️ Development Error!";
-    display = '';
-    document.getElementById('display').innerText = '0';
-  }
-}
-</script>
 
 </body>
 </html>

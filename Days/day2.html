@@ -1,29 +1,1308 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Day 2 Content</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      padding: 20px;
-      font-family: 'Poppins', sans-serif;
-      background-color: #f0f4f8;
-      color: #333;
-    }
-    h1 {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    p {
-      line-height: 1.6;
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Day 2 - Networking Basics</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script src="pdfDownload.js"></script>
+
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'Poppins',sans-serif;background:#0b1221;color:#fff;line-height:1.6}
+  header{width:100%;padding:25px 0;background:#0f1830;border-bottom:1px solid rgba(255,255,255,.1)}
+  .container{width:90%;max-width:1150px;margin:auto}
+  h1{font-size:34px;font-weight:700;margin-bottom:5px;letter-spacing:.5px}
+  .subtitle{color:#9da6c6;margin-bottom:10px}
+  .tag{display:inline-block;margin-top:10px;padding:6px 12px;border-radius:8px;background:linear-gradient(135deg,#1f2b4a,#2d3c6b);border:1px solid rgba(255,255,255,.08);font-size:12px;letter-spacing:.4px}
+
+  .section{margin-top:20px;border-radius:18px;overflow:hidden;box-shadow:0 20px 40px rgba(0,0,0,.4);}
+  .section-header{padding:20px;background:linear-gradient(145deg,#0f1830,#151f45);cursor:pointer;transition:0.3s;font-weight:600;}
+  .section-header:hover{background:linear-gradient(145deg,#151f45,#0f1830);}
+  .section-header h2{font-size:22px;color:#8bc5ff;display:inline-block;}
+  .section-content{padding:20px;background:#0f1830;display:none;animation:fadeIn 0.4s ease;}
+  @keyframes fadeIn {from {opacity:0} to {opacity:1}}
+
+  ul, ol{margin-left:20px;margin-top:8px}
+  ul li, ol li{margin-bottom:6px}
+  .highlight{color:#7dd8ff;font-weight:600}
+
+  .footer{margin:35px 0 50px 0;text-align:center;color:#9aa6c7;font-size:14px}
+  .back{display:inline-block;margin-bottom:15px;background:#121d36;padding:7px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.1);color:#9aa6c7;text-decoration:none;transition:.2s}
+  .back:hover{background:#1e2b4d;color:#fff}
+
+  .mcq-btn{display:inline-block;padding:14px 28px;background:linear-gradient(135deg,#1c2d5b,#334b91);border-radius:12px;color:white;font-weight:600;font-size:16px;text-decoration:none;border:1px solid rgba(255,255,255,.3);transition:.3s;margin-top:20px;}
+  .mcq-btn:hover{background:linear-gradient(135deg,#334b91,#1c2d5b);transform:translateY(-2px);box-shadow:0 10px 25px rgba(0,0,0,.5);}
+  .mcq-container{text-align:center;margin:40px 0}
+</style>
 </head>
 <body>
-  <h1>Day 2 Content</h1>
-  <p>Welcome to Day 2! This page contains the content for the second day. You can add any information, notes, or resources relevant to Day 2 here.</p>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet accumsan arcu. Proin ac consequat arcu. Nulla facilisi. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+
+<header>
+  <div class="container">
+    <a class="back" href="index.html">⬅ Back</a>
+    <h1>DAY 2 — Networking Basics</h1>
+    <p class="subtitle">Professional Explanation — SOC / SIEM / Blue Team</p>
+    <span class="tag">High Standard Content</span>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- Section 1 -->
+  <div class="section">
+    <div class="section-header" onclick="toggleSection(this)">
+      <h2>1. What is Networking?</h2>
+    </div>
+    <div class="section-content">
+      <p>Networking is the practice of connecting two or more computing devices (such as computers, servers, smartphones, routers, switches, and IoT devices) so that they can communicate and share resources like data, files, internet, printers, applications, and services.</p>
+      <p>A computer network enables:</p>
+      <ul>
+        <li>Communication between users and systems</li>
+        <li>Centralized storage and resource sharing</li>
+        <li>Remote access capabilities</li>
+        <li>Efficient data transfer</li>
+        <li>Secure and controlled access to information</li>
+      </ul>
+      <p><b>Note:</b> Networking is the backbone of modern IT infrastructure, enterprise operations, cloud computing, cybersecurity, and SOC operations.</p>
+    </div>
+  </div>
+
+  <!-- Section 2 -->
+  <div class="section">
+    <div class="section-header" onclick="toggleSection(this)">
+      <h2>2. What is Computer Networking?</h2>
+    </div>
+    <div class="section-content">
+      <p>Computer networking refers to the architecture, design, configuration, management, and security of interconnected computing devices. It involves both hardware components and software configurations that enable devices to communicate using defined rules called <b>protocols</b>.</p>
+      <p>A computer network can be defined professionally in two ways:</p>
+      <ol>
+        <li>A collection of interconnected computing devices that can communicate and share resources.</li>
+        <li>A system in which multiple computers are connected through wired or wireless channels to exchange data efficiently and securely.</li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- Section 3 -->
+  <div class="section">
+    <div class="section-header" onclick="toggleSection(this)">
+      <h2>3. Types of Networking</h2>
+    </div>
+    <div class="section-content">
+      <h3>A. Hardware Networking</h3>
+      <p>Deals with all physical components required to build and maintain a network.</p>
+      <ul>
+        <li>Routers</li>
+        <li>Switches</li>
+        <li>Hubs</li>
+        <li>Repeaters</li>
+        <li>Cables (Ethernet, Fiber)</li>
+        <li>Network Interface Cards</li>
+        <li>Access Points</li>
+      </ul>
+      <p><b>Purpose:</b> Ensures physical connectivity and reliable data transmission.</p>
+
+      <h3>B. Software Networking</h3>
+      <p>Deals with software configurations, protocols, network operating systems, virtualization, and logically managing traffic.</p>
+      <ul>
+        <li>Network Operating Systems</li>
+        <li>Routing configurations</li>
+        <li>Virtual LANs (VLAN)</li>
+        <li>Software Defined Networking (SDN)</li>
+        <li>Network security policies</li>
+        <li>Firewall configurations</li>
+        <li>VPN configurations</li>
+      </ul>
+      <p><b>Purpose:</b> Ensures logical control, efficient communication, and secure access across the network.</p>
+    </div>
+  </div>
+  <!-- Section 4 -->
+<div class="section">
+  <div class="section-header" onclick="toggleSection(this)" style="cursor:pointer;">
+    <h2>4. Types of Networks (Based on Coverage Area)</h2>
+  </div>
+  <div class="section-content" style="display:none; padding-top:10px;">
+
+    <h3>1. PAN – Personal Area Network</h3>
+    <p>A PAN is the smallest network designed for personal device connectivity within a very short range (a few meters).</p>
+    <ul>
+      <li><b>Coverage:</b> 1–10 meters typically</li>
+      <li><b>Use:</b> Personal communication</li>
+      <li><b>Cost:</b> Low and simple setup</li>
+    </ul>
+    <p><b>Technologies:</b> Bluetooth, Infrared, NFC, USB connections, Hotspot-based personal networks</p>
+    <p><b>Common examples:</b> Mobile to Bluetooth headphones, Smartwatch connected to mobile, Laptop connected to mobile hotspot</p>
+
+    <h3>2. LAN – Local Area Network</h3>
+    <p>A LAN connects multiple computers within a limited area such as homes, offices, schools, or corporate buildings.</p>
+    <ul>
+      <li><b>Coverage:</b> Up to 1–2 km depending on infrastructure</li>
+      <li><b>Speed:</b> Very high (100 Mbps – multiple Gbps)</li>
+      <li><b>Ownership:</b> Controlled by a single organization</li>
+      <li><b>Security:</b> Highly secure and manageable</li>
+    </ul>
+    <p><b>Technologies:</b> Ethernet, Wi-Fi</p>
+    <p><b>Examples:</b> Office network, Home Wi-Fi network, College campus building network</p>
+
+    <h3>3. MAN – Metropolitan Area Network</h3>
+    <p>A MAN connects multiple LANs within a city or metropolitan region, usually managed by ISPs or Telecom providers.</p>
+    <ul>
+      <li><b>Coverage:</b> 5–50+ km</li>
+      <li><b>Use:</b> City-wide or large region networks</li>
+      <li><b>Ownership:</b> Not owned by a single organization</li>
+      <li><b>Speed:</b> Moderate to high, depends on infrastructure</li>
+    </ul>
+    <p><b>Technologies:</b> Fiber optic, Microwave links, Copper leased lines</p>
+    <p><b>Examples:</b> City-wide corporate networks, Government departmental networks, University city-wide networks</p>
+
+    <h3>4. WAN – Wide Area Network</h3>
+    <p>WAN connects multiple LANs and MANs over extremely large geographical areas, often across countries and continents.</p>
+    <ul>
+      <li><b>Coverage:</b> Countries and entire globe</li>
+      <li><b>Speed:</b> Varies based on connection type</li>
+      <li><b>Architecture:</b> Highly complex, managed by multiple providers</li>
+      <li><b>Cost:</b> Expensive to deploy but essential for global operations</li>
+    </ul>
+    <p><b>Technologies:</b> Satellite links, Optical fiber, Undersea cables, MPLS, ISP backbone networks</p>
+    <p><b>Examples:</b> The Internet, Global bank networking systems, Corporate global networks</p>
+
+  </div>
+</div>
+
+<style>
+.section-header h2 {
+  color: #8bc5ff;
+  margin:0;
+  font-size: 22px;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.section-header:hover h2 {
+  color: #7dd8ff;
+}
+
+.section-content h3 {
+  margin-top:15px;
+  margin-bottom:8px;
+  color: #d7e4ff;
+  font-size: 18px;
+}
+
+.section-content p {
+  margin-bottom:8px;
+  line-height:1.5;
+}
+
+.section-content ul {
+  margin-left:20px;
+  margin-bottom:10px;
+}
+
+.section-content li {
+  margin-bottom:5px;
+}
+</style>
+
+<script>
+function toggleSection(header) {
+  const content = header.nextElementSibling;
+  if (content.style.display === "block") {
+    content.style.display = "none";
+  } else {
+    content.style.display = "block";
+  }
+}
+</script>
+<!-- =========================
+     SECTION 5 – Networking Topologies
+========================= -->
+<div class="section">
+  <div class="section-header" onclick="toggleSection(this)">
+    <h2>5. Networking Topologies</h2>
+  </div>
+
+  <div class="section-content">
+
+    <p>
+      <b>Networking Topology</b> refers to the physical or logical arrangement of network devices 
+      and how data travels between them. It defines communication structure, network performance,
+      and fault tolerance capability.
+    </p>
+
+    <p><b>Main Types of Topologies:</b> Bus, Star, Ring, Mesh, Hybrid</p>
+
+    <br/>
+
+    <!-- ================= BUS ================= -->
+    <h3>Bus Topology</h3>
+    <img src="../images/bus.jpeg" loading="lazy" alt="Bus Topology Diagram"
+         style="max-width:100%; border-radius:10px; display:block; margin-bottom:10px;">
+
+    <p>
+      In Bus Topology, all devices are connected to a single main communication cable called
+      the <b>Bus</b> or <b>Backbone</b>.
+    </p>
+
+    <h4>How it Works:</h4>
+    <ul>
+      <li>All devices share one main cable</li>
+      <li>Data travels along the single backbone</li>
+      <li>Each device checks if data belongs to it</li>
+    </ul>
+
+    <h4>Advantages:</h4>
+    <ul>
+      <li>Simple design</li>
+      <li>Low cost (fewer cables)</li>
+      <li>Easy to install</li>
+    </ul>
+
+    <h4>Disadvantages:</h4>
+    <ul>
+      <li>If backbone fails → entire network stops</li>
+      <li>Performance decreases with more devices</li>
+      <li>Difficult to troubleshoot</li>
+    </ul>
+
+    <p><b>Used in:</b> Small networks, early LAN systems</p>
+
+    <br/>
+
+    <!-- ================= STAR ================= -->
+    <h3>Star Topology</h3>
+    <img src="../images/star.jpeg" loading="lazy" alt="Star Topology Diagram"
+         style="max-width:100%; border-radius:10px; display:block; margin-bottom:10px;">
+
+    <p>
+      In Star Topology, all devices are individually connected to a central device 
+      such as a <b>Switch</b> or <b>Hub</b>.
+    </p>
+
+    <h4>How it Works:</h4>
+    <ul>
+      <li>Each device has a dedicated connection to central device</li>
+      <li>All communication passes through the Switch/Hub</li>
+    </ul>
+
+    <h4>Advantages:</h4>
+    <ul>
+      <li>Highly reliable</li>
+      <li>Easy to manage & troubleshoot</li>
+      <li>Most widely used today</li>
+    </ul>
+
+    <h4>Disadvantages:</h4>
+    <ul>
+      <li>If central device fails → network stops</li>
+      <li>Requires more cabling</li>
+    </ul>
+
+    <p><b>Used in:</b> Offices, Schools, Corporate LANs</p>
+
+    <br/>
+
+    <!-- ================= RING ================= -->
+    <h3>Ring Topology</h3>
+    <img src="../images/ring.svg" loading="lazy" alt="Ring Topology Diagram"
+         style="max-width:100%; border-radius:10px; display:block; margin-bottom:10px;">
+
+    <p>
+      Devices are connected in a circular path where each device connects to exactly two others.
+    </p>
+
+    <h4>How it Works:</h4>
+    <ul>
+      <li>Data travels in one or both directions in a ring</li>
+      <li>Each device forwards data to the next</li>
+    </ul>
+
+    <h4>Advantages:</h4>
+    <ul>
+      <li>Better performance than Bus under high load</li>
+    </ul>
+
+    <h4>Disadvantages:</h4>
+    <ul>
+      <li>Single failure can break entire network</li>
+      <li>Difficult to troubleshoot</li>
+      <li>Adding/removing devices disrupts network</li>
+    </ul>
+
+    <p><b>Used in:</b> Older networks, Industrial networks</p>
+
+    <br/>
+
+    <!-- ================= MESH ================= -->
+    <h3> Mesh Topology</h3>
+    <img src="../images/Mesh.webp" loading="lazy" alt="Mesh Topology Diagram"
+         style="max-width:100%; border-radius:10px; display:block; margin-bottom:10px;">
+
+    <p>In Mesh topology, every device is connected to multiple devices.</p>
+
+    <h4>Types:</h4>
+    <ul>
+      <li><b>Full Mesh</b> – Every device connects to every device</li>
+      <li><b>Partial Mesh</b> – Only important devices have multiple connections</li>
+    </ul>
+
+    <h4>Advantages:</h4>
+    <ul>
+      <li>Extremely reliable</li>
+      <li>Multiple communication paths</li>
+      <li>Excellent redundancy</li>
+    </ul>
+
+    <h4>Disadvantages:</h4>
+    <ul>
+      <li>Very expensive</li>
+      <li>Complex installation & management</li>
+    </ul>
+
+    <p><b>Used in:</b> Military, Data Centers, Secure Networks</p>
+
+    <br/>
+
+    <!-- ================= HYBRID ================= -->
+    <h3>Hybrid Topology</h3>
+    <img src="../images/hybrid.jpg" loading="lazy" alt="Hybrid Topology Diagram"
+         style="max-width:100%; border-radius:10px; display:block; margin-bottom:10px;">
+
+    <p>
+      Hybrid Topology is a combination of two or more topologies 
+      such as <b>Star + Bus</b> or <b>Star + Ring</b>.
+    </p>
+
+    <h4>Advantages:</h4>
+    <ul>
+      <li>Highly flexible</li>
+      <li>Scalable and customizable</li>
+      <li>Suitable for large organizations</li>
+    </ul>
+
+    <h4>Disadvantages:</h4>
+    <ul>
+      <li>Expensive</li>
+      <li>Requires expert management</li>
+    </ul>
+
+    <p><b>Used in:</b> Universities, Large Enterprises, Complex Networks</p>
+
+    <br/>
+
+    <h3>✔ Quick Memory Shortcut</h3>
+    <ul>
+      <li><b>Bus</b> → One main cable</li>
+      <li><b>Star</b> → All devices connect to central switch</li>
+      <li><b>Ring</b> → Circular communication loop</li>
+      <li><b>Mesh</b> → Every device connects to many devices</li>
+      <li><b>Hybrid</b> → Combination of topologies</li>
+    </ul>
+
+  </div>
+</div>
+<!-- =========================
+     SECTION 6 – Networking Devices
+========================= -->
+<div class="section">
+  <div class="section-header" onclick="toggleSection(this)">
+    <h2>6. Networking Devices</h2>
+  </div>
+
+  <div class="section-content">
+
+    <p>
+      <b>Networking devices</b> are hardware components that connect computers and other devices
+      in a network, enabling communication, data sharing, internet connectivity, and secure operations.
+    </p>
+
+    <p><b>Main Networking Devices:</b> Switch, Router, Hub, Repeater, Access Point</p>
+
+    <!-- Stylish Divider -->
+    <div class="divider"></div>
+
+    <!-- ================= SWITCH ================= -->
+    <h3> Switch</h3>
+    <img src="../images/gateway-network for switch.png" loading="lazy" alt="Network Switch"
+      style="max-width:100%; border-radius:10px; display:block; margin-bottom:10px;">
+
+    <p>
+      A <b>Switch</b> is one of the most important networking devices used in modern LANs.
+      It connects multiple devices like computers, printers, and servers within the same network.
+    </p>
+
+    <h4>How it Works:</h4>
+    <ul>
+      <li>Receives data from one device</li>
+      <li>Forwards it only to the intended device</li>
+      <li>Uses MAC addresses to identify devices</li>
+    </ul>
+
+    <h4>Why it is Important:</h4>
+    <ul>
+      <li>Reduces unnecessary traffic</li>
+      <li>Improves speed & performance</li>
+      <li>More secure than hubs</li>
+    </ul>
+
+    <p><b>Used in:</b> Offices, Companies, Schools, Data Centers</p>
+    <p><b>Simple Meaning:</b> Switch = Smart device for internal communication</p>
+
+    <div class="divider"></div>
+
+    <!-- ================= ROUTER ================= -->
+    <h3> Router</h3>
+    <img src="../images/Network-Diagram router.png" loading="lazy" alt="Network Router"
+      style="max-width:100%; border-radius:10px; display:block; margin-bottom:10px;">
+
+    <p>
+      A <b>Router</b> connects different networks together. Most commonly, it connects a Local
+      Area Network (LAN) to the Internet.
+    </p>
+
+    <h4>How it Works:</h4>
+    <ul>
+      <li>Receives data from one network</li>
+      <li>Reads destination IP address</li>
+      <li>Finds best path and forwards data</li>
+    </ul>
+
+    <h4>Why it is Important:</h4>
+    <ul>
+      <li>Connects LAN to Internet</li>
+      <li>Assigns IP addresses</li>
+      <li>Supports NAT, Firewall & Security</li>
+    </ul>
+
+    <p><b>Used in:</b> Homes, Offices, Enterprises, ISPs</p>
+    <p><b>Simple Meaning:</b> Router = Connects different networks & directs data</p>
+
+    <div class="divider"></div>
+
+    <!-- ================= HUB ================= -->
+    <h3> Hub</h3>
+    <img src="../images/hub.jpeg" loading="lazy" alt="Network Hub"
+      style="max-width:100%; border-radius:10px; display:block; margin-bottom:10px;">
+
+    <p>
+      A <b>Hub</b> is an older networking device used to connect multiple devices,
+      but unlike a switch, it is not intelligent.
+    </p>
+
+    <h4>How it Works:</h4>
+    <ul>
+      <li>Broadcasts data to all connected devices</li>
+      <li>Only the intended device uses it</li>
+    </ul>
+
+    <h4>Why it is Weak:</h4>
+    <ul>
+      <li>Creates unnecessary traffic</li>
+      <li>Less secure</li>
+      <li>Poor performance</li>
+    </ul>
+
+    <p><b>Note:</b> Rarely used today. Replaced by Switches.</p>
+    <p><b>Simple Meaning:</b> Hub = Old & dumb broadcasting device</p>
+
+    <div class="divider"></div>
+
+    <!-- ================= REPEATER ================= -->
+    <h3> Repeater</h3>
+    <img src="../images/repeator.jpeg" loading="lazy" alt="Network Repeater"
+      style="max-width:100%; border-radius:10px; display:block; margin-bottom:10px;">
+
+    <p>
+      A <b>Repeater</b> is used to extend the range of a network by strengthening weak signals.
+    </p>
+
+    <h4>Why Needed:</h4>
+    <ul>
+      <li>Signals weaken over long distances</li>
+      <li>Weak signals may cause data loss</li>
+    </ul>
+
+    <h4>How it Works:</h4>
+    <ul>
+      <li>Receives weak signal</li>
+      <li>Amplifies it</li>
+      <li>Re-transmits as strong signal</li>
+    </ul>
+
+    <p><b>Used in:</b> Large Buildings, Long Distance Networks, Wireless Coverage Areas</p>
+    <p><b>Simple Meaning:</b> Repeater = Boosts weak network signals</p>
+
+    <div class="divider"></div>
+
+    <!-- ================= ACCESS POINT ================= -->
+    <h3> Access Point (AP)</h3>
+    <img src="../images/AP.jpeg" loading="lazy" alt="WiFi Access Point"
+      style="max-width:100%; border-radius:10px; display:block; margin-bottom:10px;">
+
+    <p>
+      An <b>Access Point</b> provides wireless network connectivity (Wi-Fi). It allows
+      wireless devices like mobiles, laptops, tablets to connect to a network.
+    </p>
+
+    <h4>How it Works:</h4>
+    <ul>
+      <li>Connects to router or switch</li>
+      <li>Converts wired network to wireless</li>
+      <li>Allows multiple users to connect</li>
+    </ul>
+
+    <h4>Why Important:</h4>
+    <ul>
+      <li>Provides Wi-Fi</li>
+      <li>Supports many users</li>
+      <li>Expands coverage</li>
+    </ul>
+
+    <p><b>Used in:</b> Offices, Colleges, Airports, Hotels, Public Wi-Fi</p>
+    <p><b>Simple Meaning:</b> Access Point = Device that provides wireless connectivity</p>
+
+    <div class="divider"></div>
+
+    <h3>✔ Simple Memory Summary</h3>
+    <ul>
+      <li><b>Switch</b> → Connects devices inside LAN, forwards data smartly</li>
+      <li><b>Router</b> → Connects different networks & internet</li>
+      <li><b>Hub</b> → Old broadcast device (not smart)</li>
+      <li><b>Repeater</b> → Boosts weak signals</li>
+      <li><b>Access Point</b> → Provides Wi-Fi connectivity</li>
+    </ul>
+
+  </div>
+</div>
+
+<!-- Divider Styling -->
+<style>
+  .divider {
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(to right, #007bff, #00c6ff);
+    border-radius: 50px;
+    margin: 25px 0;
+  }
+</style>
+
+<!-- =========================
+     SECTION 7 – Important Networking Concepts
+========================= -->
+<div class="section">
+  <div class="section-header" onclick="toggleSection(this)">
+    <h2>7. Important Networking Concepts</h2>
+  </div>
+
+  <div class="section-content">
+
+    <!-- ================= IP ================= -->
+    <h3>What is IP?</h3>
+    <p>
+      An IP (Internet Protocol) address is a unique numerical identifier assigned to every device connected to a network. It enables devices to send and receive data across networks.
+    </p>
+    <p>Two versions:</p>
+    <ul>
+      <li>IPv4 – Example: 192.168.1.10</li>
+      <li>IPv6 – Example: 2001:db8:85a3::8a2e</li>
+    </ul>
+
+    <h3>What is an IP Address?</h3>
+    <p>
+      An IP (Internet Protocol) Address is a unique numerical address assigned to every device connected to a network, such as computers, mobile phones, servers, routers, CCTV devices, and IoT gadgets.
+    </p>
+    <p>Think of it like:</p>
+    <ul>
+      <li>Your home has a house number</li>
+      <li>Your phone has a mobile number</li>
+      <li>Similarly, every device on a network has an IP address</li>
+    </ul>
+    <p>
+      This address helps devices identify each other and communicate over a network or the internet.
+    </p>
+
+    <h3>Why is IP Important?</h3>
+    <p>Without an IP address:</p>
+    <ul>
+      <li>Devices cannot find each other</li>
+      <li>Data cannot be delivered to the correct device</li>
+      <li>Internet communication is impossible</li>
+    </ul>
+    <p>So IP works like a digital address system, ensuring that data goes to the right destination.</p>
+
+    <h3>What Does IP Do?</h3>
+    <p>An IP address:</p>
+    <ul>
+      <li>Uniquely identifies each device</li>
+      <li>Helps locate devices on a network</li>
+      <li>Allows sending and receiving data correctly</li>
+    </ul>
+    <p>Example:</p>
+    <ul>
+      <li>If you search something on Google,</li>
+      <li>Your device sends a request using its IP address</li>
+      <li>Google responds back to that IP address</li>
+      <li>You receive the webpage</li>
+    </ul>
+    <p>So IP is responsible for communication, tracking, and addressing.</p>
+
+    <h3>Types of IP Versions</h3>
+    <p>Currently, two IP versions are used:</p>
+
+    <h4>1. IPv4 (Internet Protocol Version 4)</h4>
+    <ul>
+      <li>Oldest and most widely used version</li>
+      <li>Uses 32-bit addressing</li>
+      <li>Written in decimal format</li>
+      <li>Separated by dots</li>
+      <li>Example: 192.168.1.10</li>
+      <li>Total possible addresses: Around 4.3 billion</li>
+      <li>Since the internet grew massively, these addresses are running out.</li>
+    </ul>
+
+    <h4>2. IPv6 (Internet Protocol Version 6)</h4>
+    <ul>
+      <li>New and advanced version</li>
+      <li>Created to replace IPv4</li>
+      <li>Uses 128-bit addressing</li>
+      <li>Written in hexadecimal format</li>
+      <li>Separated by colons</li>
+      <li>Example: 2001:db8:85a3::8a2e</li>
+      <li>Provides extremely large number of addresses (almost unlimited), faster performance, and better security.</li>
+    </ul>
+
+    <h3>Simple Short Summary</h3>
+    <ul>
+      <li>IP Address = Unique number assigned to every device</li>
+      <li>Purpose = Identify device + Enable communication</li>
+      <li>Versions = IPv4 and IPv6</li>
+    </ul>
+
+    <h3>What is Private IP?</h3>
+    <p>
+      A private IP address is used inside private networks such as homes, offices, and organizations. It is not routable on the internet and is used only within internal networks.
+    </p>
+    <p>Example ranges:</p>
+    <ul>
+      <li>10.0.0.0 to 10.255.255.255</li>
+      <li>172.16.0.0 to 172.31.255.255</li>
+      <li>192.168.0.0 to 192.168.255.255</li>
+    </ul>
+    <p>Used in:</p>
+    <ul>
+      <li>LAN networks</li>
+      <li>Home networks</li>
+      <li>Corporate internal environments</li>
+    </ul>
+
+    <h3>What is a Public IP Address?</h3>
+    <p>
+      A Public IP Address is a globally unique address assigned to your network by your Internet Service Provider (ISP). It is the identity of your network on the internet. Any device or network that needs to communicate over the internet must use a public IP.
+    </p>
+    <p>
+      You can think of it like your home address in the real world. Just as someone needs your home address to send you a letter, other networks need your public IP to communicate with you over the internet.
+    </p>
+    <p>Key Characteristics:</p>
+    <ul>
+      <li>It is globally unique (no two public IPs are the same at the same time).</li>
+      <li>It is assigned by ISP to your modem or router.</li>
+      <li>It is required for internet communication.</li>
+      <li>It is accessible over the internet, meaning external networks can reach it.</li>
+      <li>It can be Static (fixed) or Dynamic (changes automatically).</li>
+    </ul>
+    <p>Example:</p>
+    <ul>
+      <li>8.8.8.8 → Google Public DNS</li>
+      <li>1.1.1.1 → Cloudflare DNS</li>
+    </ul>
+    <p>Where it is used:</p>
+    <ul>
+      <li>Home internet connections</li>
+      <li>Company networks</li>
+      <li>Servers and websites</li>
+      <li>Cloud services</li>
+    </ul>
+
+    <h3>What is a MAC Address?</h3>
+    <p>
+      A MAC Address (Media Access Control Address) is a unique physical hardware address assigned to a device’s Network Interface Card (NIC) by the manufacturer.
+    </p>
+    <p>It works at the Data Link Layer (Layer 2) of the OSI Model.</p>
+    <p>
+      Think of it like a device’s fingerprint. Every network-enabled device (laptop, phone, router, printer, CCTV, etc.) has its own MAC address.
+    </p>
+
+    <h4>How it looks (Format)</h4>
+    <ul>
+      <li>MAC addresses are written in hexadecimal format and usually appear as:</li>
+      <li>AA:BB:CC:DD:EE:FF</li>
+      <li>or</li>
+      <li>AA-BB-CC-DD-EE-FF</li>
+    </ul>
+
+    <p>Example:</p>
+    <ul>
+      <li>A4:5E:60:9B:3F:21</li>
+    </ul>
+
+    <h4>Key Characteristics</h4>
+    <ul>
+      <li>Unique for each device</li>
+      <li>Assigned permanently by the manufacturer</li>
+      <li>Used inside Local Networks (LAN)</li>
+      <li>Helps switches identify devices</li>
+      <li>Generally does not travel over the internet</li>
+      <li>Can be spoofed (but originally fixed)</li>
+    </ul>
+
+    <h4>Where it is used</h4>
+    <ul>
+      <li>Device identification in LAN</li>
+      <li>Network security filtering (MAC filtering)</li>
+      <li>Communication inside local networks</li>
+      <li>Switch forwarding decisions</li>
+    </ul>
+
+  </div>
+</div>
+
+<!-- Optional Styling for Divider -->
+<style>
+  .divider {
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(to right, #007bff, #00c6ff);
+    border-radius: 50px;
+    margin: 25px 0;
+  }
+</style>
+<!-- =========================
+     SECTION 8 – Networking Security Devices
+========================= -->
+<div class="section">
+  <div class="section-header" onclick="toggleSection(this)">
+    <h2>8. Networking Security Devices</h2>
+  </div>
+
+  <div class="section-content">
+
+    <p>
+      Networking security devices are hardware or software tools that protect an organization’s network from cyber-attacks, unauthorized access, and malicious traffic. They help maintain Confidentiality, Integrity, and Availability (CIA) of network resources and are critical for SOC operations.
+    </p>
+
+    <h3>1. Firewall</h3>
+    <p><b>Definition:</b></p>
+    <p>
+      A firewall is a security device or software that monitors, filters, and controls network traffic between trusted internal networks and untrusted external networks (like the internet) based on a set of security rules.
+    </p>
+    <p><b>Key Functions:</b></p>
+    <ul>
+      <li>Blocks unauthorized access</li>
+      <li>Allows legitimate traffic only</li>
+      <li>Protects internal network from hackers and malware</li>
+      <li>Can be hardware-based or software-based</li>
+    </ul>
+    <p><b>Types:</b></p>
+    <ul>
+      <li>Network Firewalls</li>
+      <li>Next-Generation Firewalls (NGFW)</li>
+      <li>Stateful and Stateless Firewalls</li>
+    </ul>
+    <p><b>SOC Relevance:</b></p>
+    <ul>
+      <li>Monitored for blocked traffic, port scanning, or unusual access patterns</li>
+      <li>Generates alerts for suspicious activity</li>
+    </ul>
+
+    <h3>2. VPN (Virtual Private Network)</h3>
+    <p><b>Definition:</b></p>
+    <p>
+      A VPN establishes a secure and encrypted communication tunnel over public networks, allowing remote users to safely access internal network resources.
+    </p>
+    <p><b>Key Functions:</b></p>
+    <ul>
+      <li>Encrypts data traffic to prevent interception</li>
+      <li>Masks real IP address</li>
+      <li>Provides secure access for remote employees or branches</li>
+    </ul>
+    <p><b>SOC Relevance:</b></p>
+    <ul>
+      <li>VPN logs can be analyzed for unauthorized access attempts</li>
+      <li>Detect anomalies like unusual login locations or times</li>
+    </ul>
+
+    <h3>3. IDS (Intrusion Detection System)</h3>
+    <p><b>Definition:</b></p>
+    <p>
+      An IDS monitors network traffic for signs of suspicious or malicious activity and generates alerts.
+    </p>
+    <p><b>Key Functions:</b></p>
+    <ul>
+      <li>Detects unauthorized access attempts, malware, or abnormal behavior</li>
+      <li>Passive system – does not block traffic automatically</li>
+      <li>Can be network-based (NIDS) or host-based (HIDS)</li>
+    </ul>
+    <p><b>SOC Relevance:</b></p>
+    <ul>
+      <li>Used for threat detection and alert generation</li>
+      <li>Provides logs for incident analysis</li>
+    </ul>
+
+    <h3>4. IPS (Intrusion Prevention System)</h3>
+    <p><b>Definition:</b></p>
+    <p>
+      An IPS not only detects suspicious activities like an IDS but also actively prevents attacks by blocking malicious traffic in real-time.
+    </p>
+    <p><b>Key Functions:</b></p>
+    <ul>
+      <li>Real-time attack prevention</li>
+      <li>Can block malicious IP addresses or ports</li>
+      <li>Reduces risk of data breaches or service disruption</li>
+    </ul>
+    <p><b>SOC Relevance:</b></p>
+    <ul>
+      <li>Monitored in SOC for active attack prevention</li>
+      <li>Critical for automated response in high-risk environments</li>
+    </ul>
+
+    <h3>5. DMZ (Demilitarized Zone)</h3>
+    <p><b>Definition:</b></p>
+    <p>
+      A DMZ is a separate, isolated network segment that hosts public-facing services such as web servers, email servers, or FTP servers. It acts as a buffer between the internet and internal networks.
+    </p>
+    <p><b>Key Functions:</b></p>
+    <ul>
+      <li>Protects internal network from direct external attacks</li>
+      <li>Hosts services that must be accessible from the internet</li>
+      <li>Can include multiple layers of firewalls for added security</li>
+    </ul>
+    <p><b>SOC Relevance:</b></p>
+    <ul>
+      <li>Monitored for intrusion attempts</li>
+      <li>Logs help detect reconnaissance, web attacks, or malware targeting public servers</li>
+    </ul>
+
+    <h3>6. Additional Security Devices</h3>
+    <ul>
+      <li>UTM (Unified Threat Management): Combines multiple security features like firewall, IDS/IPS, antivirus, and VPN into a single device.</li>
+      <li>Proxy Server: Acts as an intermediary for client requests, filtering traffic, caching data, and providing anonymity.</li>
+      <li>Network Access Control (NAC): Ensures that only authorized and compliant devices can access the network.</li>
+      <li>Load Balancer with Security: Distributes traffic while mitigating DDoS attacks.</li>
+    </ul>
+
+    <h3>Summary Table</h3>
+    <table border="1" cellpadding="5" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Device</th>
+          <th>Main Purpose</th>
+          <th>SOC Relevance</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Firewall</td>
+          <td>Traffic filtering & access control</td>
+          <td>Alerts for blocked traffic & suspicious access</td>
+        </tr>
+        <tr>
+          <td>VPN</td>
+          <td>Secure remote access</td>
+          <td>Monitor unauthorized login & anomalies</td>
+        </tr>
+        <tr>
+          <td>IDS</td>
+          <td>Detect threats</td>
+          <td>Logs for investigation & alerting</td>
+        </tr>
+        <tr>
+          <td>IPS</td>
+          <td>Detect + block threats</td>
+          <td>Prevent attacks in real-time</td>
+        </tr>
+        <tr>
+          <td>DMZ</td>
+          <td>Isolated zone for public servers</td>
+          <td>Monitor attacks on public services</td>
+        </tr>
+        <tr>
+          <td>UTM</td>
+          <td>All-in-one security</td>
+          <td>Comprehensive threat monitoring</td>
+        </tr>
+        <tr>
+          <td>NAC</td>
+          <td>Device authorization</td>
+          <td>Prevents unauthorized network access</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
+<!-- Optional Styling for Divider -->
+<style>
+  .divider {
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(to right, #007bff, #00c6ff);
+    border-radius: 50px;
+    margin: 25px 0;
+  }
+</style>
+
+<!-- =========================
+     SECTION 9 – DNS (Domain Name System)
+========================= -->
+<div class="section">
+  <div class="section-header" onclick="toggleSection(this)">
+    <h2>9. DNS (Domain Name System)</h2>
+  </div>
+
+  <div class="section-content">
+
+    <p>
+      The Domain Name System (DNS) is a critical component of networking that translates human-readable domain names into machine-readable IP addresses. It acts like the phonebook of the internet, allowing users to access websites and services without remembering numerical IP addresses.
+    </p>
+
+    <h3>Why DNS is Important</h3>
+    <ul>
+      <li>Computers and servers communicate using IP addresses.</li>
+      <li>Humans prefer easy-to-remember names (e.g., google.com instead of 142.250.183.110).</li>
+      <li>DNS automatically converts these names to the corresponding IP address so the browser or application can connect to the correct server.</li>
+    </ul>
+    <p><b>Example:</b></p>
+    <p>
+      Domain Name: google.com <br>
+      DNS translates it to: 142.250.183.110
+    </p>
+    <p>Without DNS, users would need to remember numeric IP addresses for every website or service.</p>
+
+    <div class="divider"></div>
+
+    <h3>How DNS Works (Step by Step)</h3>
+    <ol>
+      <li>A user types a domain name (e.g., example.com) into a browser.</li>
+      <li>The request goes to a DNS Resolver (usually provided by ISP).</li>
+      <li>The DNS Resolver checks if it has the IP cached.
+        <ul>
+          <li>If yes → returns the IP immediately.</li>
+          <li>If no → queries other DNS servers (root server → TLD server → authoritative server).</li>
+        </ul>
+      </li>
+      <li>Once the IP address is found, it is sent back to the user’s device.</li>
+      <li>The device uses this IP to connect to the web server and fetch the requested data.</li>
+    </ol>
+
+    <div class="divider"></div>
+
+    <h3>Types of DNS Records</h3>
+    <table border="1" cellpadding="5" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Record Type</th>
+          <th>Purpose</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>A Record</td>
+          <td>Maps domain to IPv4 address</td>
+        </tr>
+        <tr>
+          <td>AAAA Record</td>
+          <td>Maps domain to IPv6 address</td>
+        </tr>
+        <tr>
+          <td>CNAME</td>
+          <td>Alias for another domain</td>
+        </tr>
+        <tr>
+          <td>MX</td>
+          <td>Mail exchange server (for emails)</td>
+        </tr>
+        <tr>
+          <td>PTR</td>
+          <td>Reverse DNS lookup (IP → Domain)</td>
+        </tr>
+        <tr>
+          <td>NS</td>
+          <td>Name servers for the domain</td>
+        </tr>
+        <tr>
+          <td>TXT</td>
+          <td>Text records (used for SPF, DKIM, verification)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="divider"></div>
+
+    <h3>DNS Security in SOC</h3>
+    <p>DNS is often targeted by attackers. SOC teams monitor DNS for threats such as:</p>
+    <ul>
+      <li>DNS Spoofing / Cache Poisoning: Attackers redirect traffic to malicious IPs.</li>
+      <li>Domain Generation Algorithms (DGA): Used by malware to dynamically create domains for command-and-control.</li>
+      <li>DNS Tunneling: Hiding malicious data or exfiltration within DNS queries.</li>
+      <li>Unauthorized changes in MX/NS records for phishing attacks.</li>
+    </ul>
+    <p>
+      SOC analysts use DNS logs and monitoring tools to detect, investigate, and respond to these threats.
+    </p>
+
+    <div class="divider"></div>
+
+    <h3>Key Takeaways</h3>
+    <ul>
+      <li>DNS = “Internet phonebook” (Domain → IP)</li>
+      <li>Allows human-friendly domain names</li>
+      <li>Vital for web browsing, email, and all internet services</li>
+      <li>SOC relevance: monitor DNS for suspicious activity to prevent attacks</li>
+    </ul>
+
+  </div>
+</div>
+
+<!-- Optional Styling for Divider -->
+<style>
+  .divider {
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(to right, #007bff, #00c6ff);
+    border-radius: 50px;
+    margin: 25px 0;
+  }
+</style>
+<!-- =========================
+     SECTION 10 – Networking Protocols
+========================= -->
+<div class="section">
+  <div class="section-header" onclick="toggleSection(this)">
+    <h2>10. Networking Protocols</h2>
+  </div>
+
+  <div class="section-content">
+
+    <p>
+      <b>Definition:</b><br>
+      A network protocol is a set of standardized rules that define how data is formatted, transmitted, received, and interpreted across networks. Protocols ensure that devices with different hardware and software can communicate reliably.
+      Think of protocols as the language that devices use to understand each other.
+    </p>
+
+    <div class="divider"></div>
+
+    <h3>Common Networking Protocols</h3>
+
+    <h4>1. HTTP (Hypertext Transfer Protocol)</h4>
+    <ul>
+      <li>Used for web browsing</li>
+      <li>Transfers web pages from server to browser</li>
+      <li>Not secure (data is sent in plaintext)</li>
+      <li>Port: 80</li>
+    </ul>
+    <p><b>Example:</b> Accessing http://example.com</p>
+
+    <h4>2. HTTPS (Hypertext Transfer Protocol Secure)</h4>
+    <ul>
+      <li>Secure version of HTTP</li>
+      <li>Uses SSL/TLS encryption to protect data during transmission</li>
+      <li>Ensures confidentiality and integrity</li>
+      <li>Port: 443</li>
+    </ul>
+    <p><b>Example:</b> Accessing https://google.com</p>
+
+    <h4>3. FTP (File Transfer Protocol)</h4>
+    <ul>
+      <li>Used to transfer files between client and server</li>
+      <li>Supports uploading and downloading files</li>
+      <li>Not encrypted by default (can use FTPS for security)</li>
+      <li>Ports: 20 (data), 21 (control)</li>
+    </ul>
+    <p><b>Example:</b> Uploading website files to a hosting server</p>
+
+    <h4>4. SMTP (Simple Mail Transfer Protocol)</h4>
+    <ul>
+      <li>Used for sending emails</li>
+      <li>Works between mail servers and client applications</li>
+      <li>Port: 25 (default), 587 (submission)</li>
+    </ul>
+
+    <h4>5. POP3 / IMAP (Post Office Protocol / Internet Message Access Protocol)</h4>
+    <ul>
+      <li>POP3: Downloads emails from server to local device (deletes from server usually)</li>
+      <li>IMAP: Accesses emails on the server without deleting them, allows syncing across devices</li>
+      <li>Ports: POP3 → 110, IMAP → 143 (encrypted versions use 995/993)</li>
+    </ul>
+
+    <h4>6. Telnet</h4>
+    <ul>
+      <li>Used for remote login to devices</li>
+      <li>Sends commands to a remote system</li>
+      <li>Insecure: Data, including passwords, is transmitted in plaintext</li>
+      <li>Port: 23</li>
+    </ul>
+    <p><b>Note:</b> Telnet is mostly replaced by SSH in modern networks.</p>
+
+    <h4>7. SSH (Secure Shell)</h4>
+    <ul>
+      <li>Secure version of Telnet</li>
+      <li>Encrypts communication between client and server</li>
+      <li>Used for remote administration of servers</li>
+      <li>Port: 22</li>
+    </ul>
+    <p><b>SOC Relevance:</b></p>
+    <ul>
+      <li>SSH logs are monitored for unauthorized login attempts</li>
+      <li>Failed login attempts may indicate brute-force attacks</li>
+    </ul>
+
+    <h4>8. SSL / TLS (Secure Sockets Layer / Transport Layer Security)</h4>
+    <ul>
+      <li>Provides encryption and secure communication over networks</li>
+      <li>TLS is the modern version replacing SSL</li>
+      <li>Used by HTTPS, email security, VPNs, and other applications</li>
+    </ul>
+    <p><b>SOC Relevance:</b></p>
+    <ul>
+      <li>Ensures data confidentiality and integrity</li>
+      <li>Logs help detect suspicious certificate issues or misconfigurations</li>
+    </ul>
+
+    <h4>9. RDP (Remote Desktop Protocol)</h4>
+    <ul>
+      <li>Used for remote desktop access to Windows machines</li>
+      <li>Port: 3389</li>
+      <li>Allows full graphical access to a remote computer</li>
+      <li>Must be secured (VPN + strong authentication)</li>
+    </ul>
+    <p><b>SOC Relevance:</b></p>
+    <ul>
+      <li>Monitored for unauthorized remote access attempts</li>
+      <li>Brute-force or unusual RDP access is a common attack vector</li>
+    </ul>
+
+    <div class="divider"></div>
+
+    <h3>Key Points</h3>
+    <ul>
+      <li>Protocols define how data moves, how devices talk, and how secure communication occurs</li>
+      <li>Each protocol has a specific purpose and port</li>
+      <li>SOC teams monitor protocol usage to detect unusual or malicious activity</li>
+      <li>Securing protocols (HTTPS, SSH, TLS, VPN) is critical for protecting sensitive data</li>
+    </ul>
+
+    <div class="divider"></div>
+
+    <h3>Quick Reference Table</h3>
+    <table border="1" cellpadding="5" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Protocol</th>
+          <th>Purpose</th>
+          <th>Port</th>
+          <th>Security Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>HTTP</td>
+          <td>Web browsing</td>
+          <td>80</td>
+          <td>Not secure</td>
+        </tr>
+        <tr>
+          <td>HTTPS</td>
+          <td>Secure web browsing</td>
+          <td>443</td>
+          <td>Encrypted via SSL/TLS</td>
+        </tr>
+        <tr>
+          <td>FTP</td>
+          <td>File transfer</td>
+          <td>20/21</td>
+          <td>Not encrypted (use FTPS/SFTP)</td>
+        </tr>
+        <tr>
+          <td>SMTP</td>
+          <td>Sending email</td>
+          <td>25/587</td>
+          <td>Should be secured via TLS</td>
+        </tr>
+        <tr>
+          <td>POP3</td>
+          <td>Receiving email</td>
+          <td>110</td>
+          <td>Use 995 for secure connections</td>
+        </tr>
+        <tr>
+          <td>IMAP</td>
+          <td>Receiving email</td>
+          <td>143</td>
+          <td>Use 993 for secure connections</td>
+        </tr>
+        <tr>
+          <td>Telnet</td>
+          <td>Remote login</td>
+          <td>23</td>
+          <td>Insecure</td>
+        </tr>
+        <tr>
+          <td>SSH</td>
+          <td>Secure remote login</td>
+          <td>22</td>
+          <td>Encrypted</td>
+        </tr>
+        <tr>
+          <td>SSL/TLS</td>
+          <td>Encryption</td>
+          <td>N/A</td>
+          <td>Used in HTTPS, VPN, email</td>
+        </tr>
+        <tr>
+          <td>RDP</td>
+          <td>Remote desktop</td>
+          <td>3389</td>
+          <td>Must secure access</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
+<!-- Optional Styling for Divider -->
+<style>
+  .divider {
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(to right, #007bff, #00c6ff);
+    border-radius: 50px;
+    margin: 25px 0;
+  }
+</style>
+
+
+  <!-- MCQ Button -->
+  <div class="mcq-container">
+    <a href="mcqs.html?day=day2" class="mcq-btn">🚀 Test Your Knowledge – Day 2 MCQs</a>
+  </div>
+
+  <button id="pdfDownload" class="mcq-btn">📄 Download / Print PDF</button>
+
+</div>
+
+<div class="footer">
+  Day 2 Completed — High Standard Networking Content
+</div>
+
+<script>
+function toggleSection(header){
+  const content = header.nextElementSibling;
+  content.style.display = content.style.display === 'block' ? 'none' : 'block';
+}
+</script>
+
+</body>
 </html>

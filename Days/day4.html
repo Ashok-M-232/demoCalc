@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Day 4 - SOC L1 Networking & Security</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script src="pdfDownload.js"></script>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Poppins',sans-serif;background:#0b1221;color:#fff;line-height:1.6}
+header{width:100%;padding:25px 0;background:#0f1830;border-bottom:1px solid rgba(255,255,255,.1)}
+.container{width:90%;max-width:1150px;margin:auto}
+h1{font-size:34px;font-weight:700;margin-bottom:5px;letter-spacing:.5px}
+.subtitle{color:#9da6c6;margin-bottom:10px}
+.tag{display:inline-block;margin-top:10px;padding:6px 12px;border-radius:8px;background:linear-gradient(135deg,#1f2b4a,#2d3c6b);border:1px solid rgba(255,255,255,.08);font-size:12px;letter-spacing:.4px}
+
+.section{margin-top:25px;background:linear-gradient(145deg,#0f1830 20%,#151f45 100%);border:1px solid rgba(255,255,255,.1);border-radius:18px;padding:22px;box-shadow:0 20px 40px rgba(0,0,0,.4);transition:0.3s}
+.section:hover{box-shadow:0 25px 50px rgba(0,0,0,.6)}
+.section h2{font-size:22px;margin-bottom:12px;font-weight:600;color:#8bc5ff}
+.section h3{font-size:18px;margin-top:15px;margin-bottom:8px;color:#d7e4ff}
+ul{margin-left:20px;margin-top:8px}
+ul li{margin-bottom:6px}
+.highlight{color:#7dd8ff;font-weight:600}
+
+table{width:100%;border-collapse:collapse;margin-top:10px}
+table th, table td{padding:8px;border:1px solid rgba(255,255,255,.2)}
+table th{background:#1c2d5b;color:#fff}
+
+.footer{margin:35px 0 50px 0;text-align:center;color:#9aa6c7;font-size:14px}
+
+.back{display:inline-block;margin-bottom:15px;background:#121d36;padding:7px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.1);color:#9aa6c7;text-decoration:none;transition:.2s}
+.back:hover{background:#1e2b4d;color:#fff}
+
+.mcq-btn{display:inline-block;padding:14px 28px;background:linear-gradient(135deg,#1c2d5b,#334b91);border-radius:12px;color:white;font-weight:600;font-size:16px;text-decoration:none;border:1px solid rgba(255,255,255,.3);transition:.3s}
+.mcq-btn:hover{background:linear-gradient(135deg,#334b91,#1c2d5b);transform:translateY(-2px);box-shadow:0 10px 25px rgba(0,0,0,.5)}
+.mcq-container{text-align:center;margin:40px 0}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <a class="back" href="index.html">⬅ Back</a>
+    <h1>DAY 3 — SOC L1 Networking & Security</h1>
+    <p class="subtitle">Professional Guide — SOC / SIEM / Blue Team</p>
+    <span class="tag">High Standard Content</span>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- 1. What is Networking -->
+  <div class="section">
+    <h2>1️⃣ What is Networking</h2>
+    <p>A computer network is a collection of devices connected to share resources, communicate, and exchange data securely.</p>
+    <h3>SOC L1 Relevance</h3>
+    <ul>
+      <li>Monitor network traffic for malware, unauthorized access, and anomalies.</li>
+      <li>Understand network layout to assist incident response and threat hunting.</li>
+    </ul>
+    <h3>Components</h3>
+    <ul>
+      <li><b>Hardware Networking:</b> Routers, switches, hubs, access points, cabling — used for traffic monitoring, segmentation, device identification.</li>
+      <li><b>Software Networking:</b> Protocols, network OS, and management tools — monitor logs, protocol usage, anomalies.</li>
+    </ul>
+  </div>
+
+  <!-- 2. Networking Types -->
+  <div class="section">
+    <h2>2️⃣ Networking Types (SOC Focus)</h2>
+    <table>
+      <tr>
+        <th>Type</th><th>Range</th><th>Technology</th><th>Use Case</th><th>SOC Monitoring Points</th>
+      </tr>
+      <tr>
+        <td>PAN</td><td>&lt;10m</td><td>Bluetooth, USB</td><td>Wearables, phones</td><td>Detect rogue devices, unauthorized pairing</td>
+      </tr>
+      <tr>
+        <td>LAN</td><td>Up to 2 km</td><td>Ethernet, Wi-Fi</td><td>Offices, schools</td><td>Monitor internal traffic, rogue devices, lateral movement</td>
+      </tr>
+      <tr>
+        <td>MAN</td><td>5–50 km</td><td>Fiber, copper</td><td>City-wide networks</td><td>Track inter-LAN traffic, suspicious connections, DDoS patterns</td>
+      </tr>
+      <tr>
+        <td>WAN</td><td>Global</td><td>Routers, ISPs</td><td>Internet, global corp</td><td>Monitor global traffic, unusual geolocations, C2 communication</td>
+      </tr>
+    </table>
+    <p><b>Key L1 Takeaways:</b> Distinguish internal vs external traffic, monitor IP addresses, use segmentation (LAN, DMZ, VLAN).</p>
+  </div>
+
+  <!-- 3. Networking Topologies -->
+  <div class="section">
+    <h2>3️⃣ Networking Topologies (SOC Perspective)</h2>
+    <table>
+      <tr><th>Topology</th><th>Description</th><th>SOC Relevance / L1 Tasks</th></tr>
+      <tr><td>Bus</td><td>Single backbone</td><td>Monitor collisions & unauthorized taps</td></tr>
+      <tr><td>Star</td><td>Central hub/switch</td><td>Easier to detect rogue devices; central monitoring</td></tr>
+      <tr><td>Ring</td><td>Circular</td><td>Monitor token passing, failure points, unusual loops</td></tr>
+      <tr><td>Mesh</td><td>Fully connected</td><td>Monitor routing anomalies, traffic deviations</td></tr>
+      <tr><td>Hybrid</td><td>Combination</td><td>Map for incident response & segmentation</td></tr>
+    </table>
+  </div>
+
+  <!-- 4. Networking Devices -->
+  <div class="section">
+    <h2>4️⃣ Networking Devices (SOC Deep Focus)</h2>
+    <table>
+      <tr><th>Device</th><th>Function</th><th>SOC L1 Tasks</th></tr>
+      <tr><td>Switch</td><td>Connect LAN devices using MAC addresses</td><td>Monitor MAC changes, rogue devices, ARP spoofing</td></tr>
+      <tr><td>Router</td><td>Connects networks; forwards packets by IP</td><td>Monitor routing anomalies, external attacks, port scans</td></tr>
+      <tr><td>Hub</td><td>Broadcast traffic</td><td>Monitor sniffing risk (legacy)</td></tr>
+      <tr><td>Repeater</td><td>Amplify signals</td><td>Ensure no signal degradation affects monitoring</td></tr>
+      <tr><td>Access Point</td><td>Wi-Fi connectivity</td><td>Detect rogue APs, unauthorized connections, Wi-Fi sniffing</td></tr>
+    </table>
+  </div>
+
+  <!-- 5. IP & MAC -->
+  <div class="section">
+    <h2>5️⃣ IP Addresses & MAC Address</h2>
+    <ul>
+      <li><b>IPv4:</b> 32-bit, limited (e.g., 192.168.1.10)</li>
+      <li><b>IPv6:</b> 128-bit, vast (e.g., 2001:db8:85a3::8a2e)</li>
+      <li><b>Public IP:</b> Monitor external attacks, reconnaissance, exfiltration</li>
+      <li><b>Private IP:</b> Monitor lateral movement, unauthorized internal traffic</li>
+      <li><b>MAC Address:</b> Monitor for spoofing, rogue devices</li>
+    </ul>
+    <p><b>Tools:</b> SIEM, NAC, Wireshark, IPAM</p>
+  </div>
+
+  <!-- 6. Security Devices -->
+  <div class="section">
+    <h2>6️⃣ Networking Security Devices (SOC Deep Focus)</h2>
+    <table>
+      <tr><th>Device</th><th>Function</th><th>SOC L1 Tasks</th></tr>
+      <tr><td>Firewall</td><td>Filter traffic</td><td>Alert on unusual ports, block threats</td></tr>
+      <tr><td>VPN</td><td>Encrypt remote access</td><td>Monitor access logs, detect abnormal geolocation</td></tr>
+      <tr><td>IDS</td><td>Detect attacks</td><td>Alert on scans, malware, policy violations</td></tr>
+      <tr><td>IPS</td><td>Detect & prevent attacks</td><td>Block malicious packets, escalate incidents</td></tr>
+      <tr><td>DMZ</td><td>Isolated public zone</td><td>Monitor public servers for intrusions</td></tr>
+      <tr><td>UTM / NAC / Proxy</td><td>Unified security</td><td>Verify compliance, inspect traffic, report anomalies</td></tr>
+    </table>
+  </div>
+
+  <!-- 7. DNS -->
+  <div class="section">
+    <h2>7️⃣ DNS (Domain Name System)</h2>
+    <p>Converts domain names to IPs. SOC monitors for DNS-based attacks.</p>
+    <ul>
+      <li>DNS spoofing / cache poisoning</li>
+      <li>DNS tunneling (malware exfiltration)</li>
+      <li>Malicious domains (DGA detection)</li>
+    </ul>
+    <p>L1 Actions: Monitor query patterns, block malicious domains, escalate anomalies.</p>
+  </div>
+
+  <!-- 8. Protocols -->
+  <div class="section">
+    <h2>8️⃣ Networking Protocols (SOC View)</h2>
+    <table>
+      <tr><th>Protocol</th><th>Port</th><th>L1 Monitoring / Threat Detection</th></tr>
+      <tr><td>HTTP</td><td>80</td><td>Suspicious URLs, malware delivery</td></tr>
+      <tr><td>HTTPS</td><td>443</td><td>Certificate anomalies, C2 detection</td></tr>
+      <tr><td>FTP</td><td>20/21</td><td>Unauthorized file uploads/downloads</td></tr>
+      <tr><td>SMTP</td><td>25/587</td><td>Phishing/spam, malware attachments</td></tr>
+      <tr><td>POP3/IMAP</td><td>110/143</td><td>Compromised mailboxes</td></tr>
+      <tr><td>Telnet</td><td>23</td><td>Legacy insecure logins</td></tr>
+      <tr><td>SSH</td><td>22</td><td>Brute-force, unusual logins</td></tr>
+      <tr><td>RDP</td><td>3389</td><td>Remote desktop compromise detection</td></tr>
+      <tr><td>SSL/TLS</td><td>N/A</td><td>Misconfigurations, MITM detection</td></tr>
+    </table>
+  </div>
+
+  <!-- 9. OSI Model -->
+  <div class="section">
+    <h2>9️⃣ OSI Model (SOC Correlation)</h2>
+    <ul>
+      <li><b>Layer 1–2:</b> Physical + Data Link → Monitor MAC, cables, switches, rogue hardware, ARP spoofing</li>
+      <li><b>Layer 3–4:</b> Network + Transport → Monitor IPs, TCP/UDP, port scans, routing anomalies</li>
+      <li><b>Layer 5–7:</b> Session, Presentation, Application → VPN, SSL/TLS, HTTP/SMTP, malware, encrypted tunnels, exfiltration</li>
+    </ul>
+  </div>
+
+  <!-- 10. Incident Response -->
+  <div class="section">
+    <h2>🔟 Incident Response Life Cycle</h2>
+    <ol>
+      <li>Preparation: Policies, tools, monitoring setup</li>
+      <li>Identification: Detect anomalies via SIEM/IDS/IPS</li>
+      <li>Containment: Isolate compromised systems</li>
+      <li>Eradication: Remove malware, patch vulnerabilities</li>
+      <li>Recovery: Restore systems, maintain monitoring</li>
+      <li>Lessons Learned: Update playbooks, improve detection</li>
+    </ol>
+  </div>
+
+  <!-- 11. Kill Chain -->
+  <div class="section">
+    <h2>1️⃣1️⃣ Cyber Kill Chain (SOC Application)</h2>
+    <table>
+      <tr><th>Stage</th><th>SOC L1 Action</th></tr>
+      <tr><td>Reconnaissance</td><td>Detect port scans, info gathering</td></tr>
+      <tr><td>Weaponization</td><td>Monitor suspicious file creation / malware staging</td></tr>
+      <tr><td>Delivery</td><td>Email/web monitoring, malware sandboxing</td></tr>
+      <tr><td>Exploitation</td><td>IDS/IPS alerts, escalate</td></tr>
+      <tr><td>Installation</td><td>Endpoint monitoring, log analysis</td></tr>
+      <tr><td>Command & Control</td><td>Monitor outbound traffic, escalate suspicious C2</td></tr>
+      <tr><td>Actions on Objectives</td><td>Correlate alerts in SIEM, escalate data exfiltration</td></tr>
+    </table>
+  </div>
+
+  <!-- 12. Additional Focus -->
+  <div class="section">
+    <h2>1️⃣2️⃣ Additional SOC Networking Focus Areas</h2>
+    <ul>
+      <li>VLANs & Segmentation → Limit lateral movement</li>
+      <li>NetFlow / Packet Capture → Detect abnormal flows & malware</li>
+      <li>Port & Protocol Monitoring → Identify brute-force & unusual access</li>
+      <li>Threat Intelligence → Correlate IP/domain/malware reputation</li>
+      <li>Anomaly Detection → Compare traffic to baseline</li>
+      <li>Logging & SIEM Correlation → Centralized monitoring</li>
+    </ul>
+  </div>
+
+  <!-- L1 Takeaways -->
+  <div class="section">
+    <h2>✅ SOC L1 Takeaways</h2>
+    <ul>
+      <li>Understand network structure, topologies, and device functions</li>
+      <li>Monitor IPs, MACs, VLANs, DNS, and protocols for anomalies</li>
+      <li>Use SIEM, IDS/IPS, logs to detect threats early</li>
+      <li>Apply kill chain and incident response frameworks</li>
+      <li>Correlate internal & external traffic for comprehensive monitoring</li>
+      <li>Escalate suspicious events and perform initial triage</li>
+    </ul>
+  </div>
+
+  <!-- MCQ and PDF -->
+  <div class="mcq-container">
+    <a href="mcqs.html?day=day3" class="mcq-btn">🚀 Test Your Knowledge – Day 3 MCQs</a>
+  </div>
+  <button id="pdfDownload" class="mcq-btn">📄 Download / Print PDF</button>
+
+</div>
+
+<div class="footer">
+  Day 3 Completed — SOC L1 Networking & Security Professional Guide
+</div>
+
+</body>
+</html>
