@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Day 6 - SOC L3 / Incident Responder</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script src="pdfDownload.js"></script>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Poppins',sans-serif;background:#0b1221;color:#fff;line-height:1.6}
+header{width:100%;padding:25px 0;background:#0f1830;border-bottom:1px solid rgba(255,255,255,.1)}
+.container{width:90%;max-width:1150px;margin:auto}
+h1{font-size:34px;font-weight:700;margin-bottom:5px;letter-spacing:.5px}
+.subtitle{color:#9da6c6;margin-bottom:10px}
+.tag{display:inline-block;margin-top:10px;padding:6px 12px;border-radius:8px;background:linear-gradient(135deg,#1f2b4a,#2d3c6b);border:1px solid rgba(255,255,255,.08);font-size:12px;letter-spacing:.4px}
+
+.section{margin-top:25px;background:linear-gradient(145deg,#0f1830 20%,#151f45 100%);border:1px solid rgba(255,255,255,.1);border-radius:18px;padding:22px;box-shadow:0 20px 40px rgba(0,0,0,.4);transition:0.3s}
+.section:hover{box-shadow:0 25px 50px rgba(0,0,0,.6)}
+.section h2{font-size:22px;margin-bottom:12px;font-weight:600;color:#8bc5ff}
+.section h3{font-size:18px;margin-top:15px;margin-bottom:8px;color:#d7e4ff}
+ul{margin-left:20px;margin-top:8px}
+ul li{margin-bottom:6px}
+.highlight{color:#7dd8ff;font-weight:600}
+
+table{width:100%;border-collapse:collapse;margin-top:10px}
+table th, table td{padding:8px;border:1px solid rgba(255,255,255,.2)}
+table th{background:#1c2d5b;color:#fff}
+
+.footer{margin:35px 0 50px 0;text-align:center;color:#9aa6c7;font-size:14px}
+
+.back{display:inline-block;margin-bottom:15px;background:#121d36;padding:7px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.1);color:#9aa6c7;text-decoration:none;transition:.2s}
+.back:hover{background:#1e2b4d;color:#fff}
+
+.mcq-btn{display:inline-block;padding:14px 28px;background:linear-gradient(135deg,#1c2d5b,#334b91);border-radius:12px;color:white;font-weight:600;font-size:16px;text-decoration:none;border:1px solid rgba(255,255,255,.3);transition:.3s}
+.mcq-btn:hover{background:linear-gradient(135deg,#334b91,#1c2d5b);transform:translateY(-2px);box-shadow:0 10px 25px rgba(0,0,0,.5)}
+.mcq-container{text-align:center;margin:40px 0}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <a class="back" href="index.html">⬅ Back</a>
+    <h1>DAY 6 — SOC L3 / Incident Responder</h1>
+    <p class="subtitle">Professional Guide — SOC / Advanced IR / Threat Intelligence / Blue Team</p>
+    <span class="tag">High Standard Content</span>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- 1. Role of SOC L3 -->
+  <div class="section">
+    <h2>1️⃣ Role of SOC L3</h2>
+    <p>SOC L3 analysts or Incident Responders are senior experts responsible for leading advanced investigations, incident management, malware reverse engineering, threat intelligence, and mentoring SOC L1 & L2 teams.</p>
+    <h3>Primary Responsibilities</h3>
+    <ul>
+      <li>Lead and manage complex security incidents</li>
+      <li>Perform malware reverse engineering and advanced endpoint analysis</li>
+      <li>Integrate threat intelligence to detect targeted attacks</li>
+      <li>Guide SOC L1/L2 and improve detection systems</li>
+      <li>Coordinate IR with internal teams and external partners</li>
+      <li>Develop and refine incident response playbooks</li>
+      <li>Provide executive-level incident reports and strategic recommendations</li>
+    </ul>
+    <h3>SOC L3 Mindset</h3>
+    <ul>
+      <li>Expert in cyber threat analysis</li>
+      <li>Strategic, calm, and decisive under pressure</li>
+      <li>Evidence-driven and technically precise</li>
+      <li>Proactive attacker-centric thinking</li>
+      <li>Deep understanding of defensive architecture and controls</li>
+    </ul>
+  </div>
+
+  <!-- 2. SOC L3 Daily Workflow -->
+  <div class="section">
+    <h2>2️⃣ SOC L3 Daily Workflow</h2>
+    <ul>
+      <li>Review escalated incidents from L2 and L1</li>
+      <li>Lead advanced investigations of complex alerts</li>
+      <li>Perform threat intelligence correlation and hunting</li>
+      <li>Coordinate containment, eradication, and recovery</li>
+      <li>Refine SIEM/SOAR rules and use cases</li>
+      <li>Develop new playbooks and automate repetitive tasks</li>
+      <li>Prepare detailed reports for management and stakeholders</li>
+    </ul>
+    <h3>Example</h3>
+    <p>L2 escalates multi-stage ransomware → L3 analyzes TTPs, malware samples, network flows → L3 directs containment & eradication → Provides full incident report to management</p>
+  </div>
+
+  <!-- 3. Advanced Incident Handling -->
+  <div class="section">
+    <h2>3️⃣ Advanced Incident Handling</h2>
+    <ul>
+      <li>Incident validation and triage</li>
+      <li>Advanced containment and eradication strategies</li>
+      <li>Digital forensics and root cause analysis</li>
+      <li>Recovery planning and verification</li>
+      <li>Post-incident lessons learned and reporting</li>
+    </ul>
+    <h3>Containment & Eradication Techniques</h3>
+    <ul>
+      <li>Network segmentation and isolation</li>
+      <li>Endpoint isolation via EDR</li>
+      <li>Malware removal and registry clean-up</li>
+      <li>Patch vulnerabilities and close attack vectors</li>
+      <li>Coordination with threat intel and external parties</li>
+    </ul>
+  </div>
+
+  <!-- 4. Threat Intelligence & Hunting -->
+  <div class="section">
+    <h2>4️⃣ Threat Intelligence & Threat Hunting</h2>
+    <ul>
+      <li>Integrate external threat intelligence feeds with internal logs</li>
+      <li>Identify targeted attacks, APT activity, and zero-day threats</li>
+      <li>Hunt for advanced persistent threats (APT) using TTPs</li>
+      <li>Monitor suspicious lateral movement and data exfiltration</li>
+    </ul>
+    <h3>Tools Commonly Used</h3>
+    <ul>
+      <li>SIEM (Splunk, QRadar, ArcSight)</li>
+      <li>EDR / MDR (CrowdStrike, Defender, Carbon Black)</li>
+      <li>Threat intelligence platforms (MISP, Recorded Future)</li>
+      <li>Packet capture & network monitoring (Wireshark, Zeek)</li>
+      <li>Malware sandbox & reverse engineering tools</li>
+    </ul>
+  </div>
+
+  <!-- 5. Malware & Endpoint Analysis -->
+  <div class="section">
+    <h2>5️⃣ Malware & Endpoint Analysis</h2>
+    <ul>
+      <li>Reverse engineer malware to understand TTPs</li>
+      <li>Analyze process chains, persistence mechanisms, scheduled tasks, and registry changes</li>
+      <li>Detect advanced evasion techniques (rootkits, DLL injection, in-memory malware)</li>
+    </ul>
+    <h3>Example</h3>
+    <p>Suspicious PowerShell execution detected → L3 analyzes scripts, decodes payloads, identifies C2 communication → Directs containment and eradication</p>
+  </div>
+
+  <!-- 6. Network & Cloud Security Analysis -->
+  <div class="section">
+    <h2>6️⃣ Network & Cloud Security Analysis</h2>
+    <ul>
+      <li>Analyze East-West and North-South traffic for anomalies</li>
+      <li>Monitor cloud infrastructure (AWS, Azure, GCP) for suspicious activity</li>
+      <li>Detect data exfiltration, lateral movement, and unusual access patterns</li>
+    </ul>
+    <h3>Tools</h3>
+    <ul>
+      <li>Wireshark, NetFlow, IDS/IPS</li>
+      <li>Cloud security monitoring platforms</li>
+      <li>Firewall and proxy logs correlation</li>
+    </ul>
+  </div>
+
+  <!-- 7. MITRE ATT&CK & TTPs -->
+  <div class="section">
+    <h2>7️⃣ MITRE ATT&CK & TTPs</h2>
+    <ul>
+      <li>Map incidents to ATT&CK framework: Initial Access, Execution, Persistence, Privilege Escalation, Defense Evasion, Credential Access, Discovery, Lateral Movement, Collection, Exfiltration, Command & Control</li>
+      <li>Identify advanced multi-stage attack techniques</li>
+    </ul>
+  </div>
+
+  <!-- 8. SOAR & Automation -->
+  <div class="section">
+    <h2>8️⃣ SOAR & Automation</h2>
+    <ul>
+      <li>Automate repetitive containment and notification tasks</li>
+      <li>Integrate playbooks with SIEM and EDR for automatic actions</li>
+      <li>Enable faster response and reduce human error</li>
+    </ul>
+    <h3>Common Automated Actions</h3>
+    <ul>
+      <li>Isolate compromised endpoint</li>
+      <li>Block malicious IP/domain</li>
+      <li>Disable user accounts and notify stakeholders</li>
+    </ul>
+  </div>
+
+  <!-- 9. Reporting & Documentation -->
+  <div class="section">
+    <h2>9️⃣ Reporting & Documentation</h2>
+    <ul>
+      <li>Incident Response Report</li>
+      <li>Root Cause Analysis</li>
+      <li>Executive Summary</li>
+      <li>Lessons Learned Report</li>
+      <li>Include timeline, impact, evidence, actions taken, and preventive measures</li>
+    </ul>
+  </div>
+
+  <!-- 10. SOC L3 Tools -->
+  <div class="section">
+    <h2>🔟 SOC L3 Tools Knowledge</h2>
+    <ul>
+      <li>SIEM: Splunk, QRadar, ArcSight, Sentinel</li>
+      <li>EDR / MDR: CrowdStrike, Carbon Black, Defender</li>
+      <li>IDS/IPS: Snort, Suricata, Zeek</li>
+      <li>Threat Intel Platforms: MISP, Recorded Future</li>
+      <li>Malware Analysis: Sandbox, IDA Pro, Ghidra, Cuckoo</li>
+      <li>SOAR Platforms: Demisto, Splunk Phantom</li>
+      <li>Cloud Security Tools: Prisma Cloud, GuardDuty, Security Hub</li>
+    </ul>
+  </div>
+
+  <!-- L3 Takeaways -->
+  <div class="section">
+    <h2>✅ SOC L3 Key Takeaways</h2>
+    <ul>
+      <li>Lead and manage advanced, complex incidents</li>
+      <li>Perform malware reverse engineering and endpoint analysis</li>
+      <li>Integrate threat intelligence to identify targeted attacks</li>
+      <li>Develop and automate advanced IR playbooks</li>
+      <li>Provide detailed reporting and strategic recommendations</li>
+      <li>Ensure enterprise-wide protection from sophisticated threats</li>
+    </ul>
+  </div>
+
+  <!-- MCQ and PDF -->
+  <div class="mcq-container">
+    <a href="mcqs.html?day=day1" class="mcq-btn">🚀 Test Your Knowledge – Day 1 MCQs</a>
+  </div>
+  <button id="pdfDownload" class="mcq-btn">📄 Download / Print PDF</button>
+
+</div>
+
+<div class="footer">
+  Day 1 Completed — SOC L3 / Incident Responder Professional Guide
+</div>
+
+</body>
+</html>

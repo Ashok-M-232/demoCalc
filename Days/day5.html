@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Day 1 - SOC L2 Advanced Security Operations</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script src="pdfDownload.js"></script>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Poppins',sans-serif;background:#0b1221;color:#fff;line-height:1.6}
+header{width:100%;padding:25px 0;background:#0f1830;border-bottom:1px solid rgba(255,255,255,.1)}
+.container{width:90%;max-width:1150px;margin:auto}
+h1{font-size:34px;font-weight:700;margin-bottom:5px;letter-spacing:.5px}
+.subtitle{color:#9da6c6;margin-bottom:10px}
+.tag{display:inline-block;margin-top:10px;padding:6px 12px;border-radius:8px;background:linear-gradient(135deg,#1f2b4a,#2d3c6b);border:1px solid rgba(255,255,255,.08);font-size:12px;letter-spacing:.4px}
+
+.section{margin-top:25px;background:linear-gradient(145deg,#0f1830 20%,#151f45 100%);border:1px solid rgba(255,255,255,.1);border-radius:18px;padding:22px;box-shadow:0 20px 40px rgba(0,0,0,.4);transition:0.3s}
+.section:hover{box-shadow:0 25px 50px rgba(0,0,0,.6)}
+.section h2{font-size:22px;margin-bottom:12px;font-weight:600;color:#8bc5ff}
+.section h3{font-size:18px;margin-top:15px;margin-bottom:8px;color:#d7e4ff}
+ul{margin-left:20px;margin-top:8px}
+ul li{margin-bottom:6px}
+.highlight{color:#7dd8ff;font-weight:600}
+
+table{width:100%;border-collapse:collapse;margin-top:10px}
+table th, table td{padding:8px;border:1px solid rgba(255,255,255,.2)}
+table th{background:#1c2d5b;color:#fff}
+
+.footer{margin:35px 0 50px 0;text-align:center;color:#9aa6c7;font-size:14px}
+
+.back{display:inline-block;margin-bottom:15px;background:#121d36;padding:7px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.1);color:#9aa6c7;text-decoration:none;transition:.2s}
+.back:hover{background:#1e2b4d;color:#fff}
+
+.mcq-btn{display:inline-block;padding:14px 28px;background:linear-gradient(135deg,#1c2d5b,#334b91);border-radius:12px;color:white;font-weight:600;font-size:16px;text-decoration:none;border:1px solid rgba(255,255,255,.3);transition:.3s}
+.mcq-btn:hover{background:linear-gradient(135deg,#334b91,#1c2d5b);transform:translateY(-2px);box-shadow:0 10px 25px rgba(0,0,0,.5)}
+.mcq-container{text-align:center;margin:40px 0}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <a class="back" href="index.html">⬅ Back</a>
+    <h1>DAY 5 — SOC L2 Advanced Security Operations</h1>
+    <p class="subtitle">Professional Guide — SOC / SIEM / Incident Handling / Threat Hunting</p>
+    <span class="tag">High Standard Content</span>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- 1. Role of SOC L2 -->
+  <div class="section">
+    <h2>1️⃣ Role of SOC L2</h2>
+    <p>SOC L2 analysts are senior operators responsible for validating complex alerts, deep investigation, incident response, threat hunting, malware analysis, tuning detection systems, and mentoring SOC L1.</p>
+    <h3>Primary Responsibilities</h3>
+    <ul>
+      <li>Validate and confirm real security incidents</li>
+      <li>Perform root cause analysis and incident triage</li>
+      <li>Guide SOC L1 and review escalations</li>
+      <li>Handle medium to high severity incidents</li>
+      <li>Collaborate with IR, Forensics, and Threat Intel teams</li>
+      <li>Improve SIEM rules, use cases, detections</li>
+      <li>Prepare incident reports and executive summaries</li>
+    </ul>
+    <h3>SOC L2 Mindset</h3>
+    <ul>
+      <li>Analytical and calm during incidents</li>
+      <li>Evidence-based investigation</li>
+      <li>Attack-oriented thinking</li>
+      <li>Defensive architecture understanding</li>
+    </ul>
+  </div>
+
+  <!-- 2. SOC L2 Daily Workflow -->
+  <div class="section">
+    <h2>2️⃣ SOC L2 Daily Workflow</h2>
+    <ul>
+      <li>Review and verify escalations from L1</li>
+      <li>Deep dive into suspicious alerts and logs</li>
+      <li>Threat hunting for hidden / unknown threats</li>
+      <li>Validate and escalate confirmed incidents to L3 / IR</li>
+      <li>Tune SIEM to reduce false positives</li>
+      <li>Work on playbooks and automation</li>
+      <li>Reporting and documentation</li>
+    </ul>
+    <h3>Example</h3>
+    <p>L1 detects suspicious PowerShell execution → L2 verifies execution chain, user identity, network connections → Confirms malware persistence attempt → Containment initiated</p>
+  </div>
+
+  <!-- 3. Advanced SIEM and Log Investigation -->
+  <div class="section">
+    <h2>3️⃣ Advanced SIEM and Log Investigation</h2>
+    <ul>
+      <li>Multi-source data correlation from firewall, IDS/IPS, proxy, DNS, VPN, EDR, Windows, Linux, cloud logs</li>
+      <li>Identify attacker behavior from logs</li>
+      <li>Trace lateral movement and map to MITRE ATT&CK</li>
+      <li>Build dashboards and detection use cases</li>
+    </ul>
+    <h3>Example</h3>
+    <p>Multiple failed logins + successful login from unknown IP + PowerShell execution = Possible Credential Compromise</p>
+  </div>
+
+  <!-- 4. Incident Handling and Response -->
+  <div class="section">
+    <h2>4️⃣ Incident Handling and Response (SOC L2)</h2>
+    <ul>
+      <li>Validate and confirm incident</li>
+      <li>Assign severity and priority</li>
+      <li>Contain compromised systems</li>
+      <li>Eradicate threats and patch vulnerabilities</li>
+      <li>Recover systems and monitor post-recovery</li>
+      <li>Document lessons learned</li>
+    </ul>
+    <h3>Containment Techniques</h3>
+    <ul>
+      <li>Disable compromised accounts</li>
+      <li>Isolate host from network</li>
+      <li>Block malicious IP/domain</li>
+      <li>Stop malicious processes</li>
+    </ul>
+  </div>
+
+  <!-- 5. Threat Hunting -->
+  <div class="section">
+    <h2>5️⃣ Threat Hunting</h2>
+    <ul>
+      <li>Unusual login behavior</li>
+      <li>Abnormal traffic flow</li>
+      <li>Suspicious PowerShell/cmd usage</li>
+      <li>Unauthorized software installation</li>
+      <li>DNS tunneling behavior</li>
+      <li>Beaconing traffic</li>
+    </ul>
+    <h3>Tools Commonly Used</h3>
+    <ul>
+      <li>SIEM, EDR, Wireshark / Packet capture</li>
+      <li>Threat intelligence feeds</li>
+      <li>MITRE ATT&CK Navigator</li>
+    </ul>
+    <h3>Example</h3>
+    <p>Detect beaconing traffic every 60 seconds to unknown domain → Possible C2 Communication</p>
+  </div>
+
+  <!-- 6. Malware and Endpoint Investigation -->
+  <div class="section">
+    <h2>6️⃣ Malware and Endpoint Investigation</h2>
+    <ul>
+      <li>Suspicious processes and process chain analysis</li>
+      <li>Registry modifications, persistence techniques</li>
+      <li>Scheduled tasks, startup entries</li>
+    </ul>
+    <h3>Example</h3>
+    <p>Unknown exe running → parent process mshta.exe → suspicious URL load → confirms malware delivery</p>
+  </div>
+
+  <!-- 7. Network Security Analysis -->
+  <div class="section">
+    <h2>7️⃣ Network Security Analysis</h2>
+    <ul>
+      <li>East-West traffic (internal)</li>
+      <li>North-South traffic (external)</li>
+      <li>Lateral movement detection</li>
+      <li>Port scanning and data exfiltration attempts</li>
+    </ul>
+    <h3>Tools</h3>
+    <ul>
+      <li>Wireshark, NetFlow, IDS / IPS, Proxy logs</li>
+    </ul>
+    <h3>Example</h3>
+    <p>Unusually large outbound traffic to unknown country → Possible data exfiltration</p>
+  </div>
+
+  <!-- 8. MITRE ATT&CK -->
+  <div class="section">
+    <h2>8️⃣ MITRE ATT&CK Framework (SOC L2 Use)</h2>
+    <ul>
+      <li>Initial Access, Execution, Persistence</li>
+      <li>Privilege Escalation, Defense Evasion</li>
+      <li>Credential Access, Discovery, Lateral Movement</li>
+      <li>Exfiltration, Command & Control</li>
+    </ul>
+    <h3>Example</h3>
+    <p>PowerShell + Credential Dumping + Remote Desktop Movement → High probability ransomware preparation</p>
+  </div>
+
+  <!-- 9. SIEM Rule Tuning -->
+  <div class="section">
+    <h2>9️⃣ SIEM Rule Tuning and Optimization</h2>
+    <ul>
+      <li>Reduce false positives</li>
+      <li>Improve correlation rules</li>
+      <li>Add new detection use cases</li>
+      <li>Maintain detection quality</li>
+    </ul>
+    <h3>Example</h3>
+    <p>Too many failed login alerts → refine rule with threshold, geolocation, user behavior</p>
+  </div>
+
+  <!-- 10. Playbooks & Automation -->
+  <div class="section">
+    <h2>🔟 Playbooks and Automation</h2>
+    <ul>
+      <li>Block malicious IP, disable compromised user</li>
+      <li>Isolate endpoint, send alert notifications</li>
+      <li>Faster response and reduced manual errors</li>
+    </ul>
+  </div>
+
+  <!-- 11. Reporting & Documentation -->
+  <div class="section">
+    <h2>1️⃣1️⃣ Reporting and Documentation</h2>
+    <ul>
+      <li>Incident Response Report, Root Cause Analysis</li>
+      <li>Executive Summary, Lessons Learned Report</li>
+      <li>Timeline, Impact, Evidence, Actions taken, Preventive measures</li>
+    </ul>
+  </div>
+
+  <!-- 12. SOC L2 Tools -->
+  <div class="section">
+    <h2>1️⃣2️⃣ SOC L2 Tools Knowledge</h2>
+    <ul>
+      <li>SIEM (Splunk, QRadar, Azure Sentinel, ArcSight)</li>
+      <li>EDR (CrowdStrike, Defender, Carbon Black)</li>
+      <li>IDS / IPS (Snort, Suricata)</li>
+      <li>Firewall, Threat Intel, Wireshark, SOAR platforms</li>
+    </ul>
+  </div>
+
+  <!-- L2 Takeaways -->
+  <div class="section">
+    <h2>✅ SOC L2 Key Takeaways</h2>
+    <ul>
+      <li>Handles complex and high severity incidents</li>
+      <li>Performs deep investigation and threat hunting</li>
+      <li>Tunes SIEM and improves detections</li>
+      <li>Works closely with IR and Threat Intel teams</li>
+      <li>Ensures protection from advanced attacks</li>
+    </ul>
+  </div>
+
+  <!-- MCQ and PDF -->
+  <div class="mcq-container">
+    <a href="mcqs.html?day=day1" class="mcq-btn">🚀 Test Your Knowledge – Day 1 MCQs</a>
+  </div>
+  <button id="pdfDownload" class="mcq-btn">📄 Download / Print PDF</button>
+
+</div>
+
+<div class="footer">
+  Day 1 Completed — SOC L2 Advanced Security Operations Professional Guide
+</div>
+
+</body>
+</html>
