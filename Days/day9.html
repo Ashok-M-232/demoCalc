@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Day 3 - Java Systems Engineer</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Poppins',sans-serif;background:#0b1221;color:#fff;line-height:1.6}
+header{padding:25px 0;background:#0f1830;border-bottom:1px solid rgba(255,255,255,.1)}
+.container{width:90%;max-width:1150px;margin:auto}
+h1{font-size:34px;font-weight:700}
+.subtitle{color:#9da6c6;margin:8px 0}
+.tag{display:inline-block;margin-top:10px;padding:6px 12px;border-radius:8px;background:#1c2d5b;font-size:12px}
+
+.section{margin-top:25px;background:linear-gradient(145deg,#0f1830,#151f45);border:1px solid rgba(255,255,255,.1);border-radius:18px;padding:22px}
+.section h2{font-size:22px;margin-bottom:12px;color:#8bc5ff}
+.section h3{font-size:18px;margin-top:15px;margin-bottom:8px;color:#d7e4ff}
+
+ul{margin-left:20px}
+li{margin-bottom:6px}
+
+table{width:100%;border-collapse:collapse;margin-top:12px}
+th,td{padding:8px;border:1px solid rgba(255,255,255,.2)}
+th{background:#1c2d5b}
+
+.footer{text-align:center;margin:40px 0;color:#9aa6c7}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container">
+    <h1>DAY 3 — Java Systems Engineer</h1>
+    <p class="subtitle">Performance, Scalability, Reliability & Production Engineering</p>
+    <span class="tag">High-Impact Engineering Role</span>
+  </div>
+</header>
+
+<div class="container">
+
+<!-- 1 -->
+<div class="section">
+<h2>1️⃣ What is a Java Systems Engineer</h2>
+<p>
+A Java Systems Engineer ensures that <b>Java applications continue to work under heavy load,
+high traffic, failures, and real-world constraints</b>.
+</p>
+
+<h3>Primary Responsibility</h3>
+<ul>
+<li>Make systems fast, stable, and scalable</li>
+<li>Prevent outages and performance degradation</li>
+<li>Fix production performance issues</li>
+<li>Design systems for failure tolerance</li>
+</ul>
+</div>
+
+<!-- 2 -->
+<div class="section">
+<h2>2️⃣ Real Systems We Handle</h2>
+<table>
+<tr><th>System Type</th><th>Real Examples</th><th>System-Level Focus</th></tr>
+<tr><td>High Traffic APIs</td><td>Payments, bookings</td><td>Latency & throughput</td></tr>
+<tr><td>Distributed Systems</td><td>Microservices</td><td>Service reliability</td></tr>
+<tr><td>Batch Processing</td><td>Billing, reports</td><td>Memory & execution time</td></tr>
+<tr><td>Event Systems</td><td>Kafka-based flows</td><td>Message durability</td></tr>
+<tr><td>Critical Platforms</td><td>Banking, healthcare</td><td>Zero data loss</td></tr>
+</table>
+</div>
+
+<!-- 3 -->
+<div class="section">
+<h2>3️⃣ Languages & Technologies Used (REAL WORLD)</h2>
+<table>
+<tr><th>Category</th><th>Technology</th><th>Why Used</th></tr>
+<tr><td>Main Language</td><td>Java (8/11/17)</td><td>Stability & ecosystem</td></tr>
+<tr><td>Supporting Languages</td><td>Shell, Python</td><td>Automation & analysis</td></tr>
+<tr><td>Frameworks</td><td>Spring Boot, Spring Cloud</td><td>Distributed systems</td></tr>
+<tr><td>Async</td><td>CompletableFuture, Reactor</td><td>Non-blocking flows</td></tr>
+</table>
+</div>
+
+<!-- 4 -->
+<div class="section">
+<h2>4️⃣ JVM Internals & Memory Management</h2>
+<h3>What We Tune</h3>
+<ul>
+<li>Heap size (-Xms, -Xmx)</li>
+<li>Garbage collectors (G1, ZGC)</li>
+<li>Thread stacks</li>
+<li>Metaspace</li>
+</ul>
+
+<h3>Real Issues</h3>
+<ul>
+<li>Memory leak → OutOfMemoryError</li>
+<li>GC pause → slow APIs</li>
+<li>Thread exhaustion → service freeze</li>
+</ul>
+</div>
+
+<!-- 5 -->
+<div class="section">
+<h2>5️⃣ Performance Engineering (CORE SKILL)</h2>
+<table>
+<tr><th>Area</th><th>Engineering Focus</th></tr>
+<tr><td>CPU</td><td>Remove expensive computations</td></tr>
+<tr><td>Memory</td><td>Object lifecycle optimization</td></tr>
+<tr><td>I/O</td><td>Async & buffering</td></tr>
+<tr><td>Network</td><td>Timeouts & retries</td></tr>
+<tr><td>Database</td><td>Query optimization</td></tr>
+</table>
+</div>
+
+<!-- 6 -->
+<div class="section">
+<h2>6️⃣ Databases & Storage Systems</h2>
+<table>
+<tr><th>Type</th><th>Technology</th><th>System Engineer Focus</th></tr>
+<tr><td>Relational</td><td>MySQL, PostgreSQL, Oracle</td><td>Indexes, locks, slow queries</td></tr>
+<tr><td>NoSQL</td><td>MongoDB, Cassandra</td><td>Partitioning & consistency</td></tr>
+<tr><td>Cache</td><td>Redis, Memcached</td><td>Reduce DB load</td></tr>
+<tr><td>Search</td><td>Elasticsearch</td><td>Fast querying</td></tr>
+</table>
+</div>
+
+<!-- 7 -->
+<div class="section">
+<h2>7️⃣ Scalability Patterns</h2>
+<ul>
+<li>Horizontal scaling (multiple instances)</li>
+<li>Load balancing</li>
+<li>Stateless services</li>
+<li>Database sharding</li>
+<li>Asynchronous processing</li>
+</ul>
+
+<h3>Real Case</h3>
+<ul>
+<li>Festival sale traffic spike → auto-scale services</li>
+<li>Heavy reports → move to async jobs</li>
+</ul>
+</div>
+
+<!-- 8 -->
+<div class="section">
+<h2>8️⃣ Reliability & Fault Tolerance</h2>
+<table>
+<tr><th>Technique</th><th>Purpose</th></tr>
+<tr><td>Circuit Breaker</td><td>Prevent cascading failures</td></tr>
+<tr><td>Retry with Backoff</td><td>Handle transient failures</td></tr>
+<tr><td>Timeouts</td><td>Avoid thread blocking</td></tr>
+<tr><td>Bulkheads</td><td>Isolate failures</td></tr>
+</table>
+</div>
+
+<!-- 9 -->
+<div class="section">
+<h2>9️⃣ Observability & Monitoring</h2>
+<ul>
+<li>Metrics: CPU, memory, latency</li>
+<li>Logs: structured logging</li>
+<li>Tracing: request flow across services</li>
+</ul>
+
+<h3>Tools</h3>
+<ul>
+<li>Prometheus & Grafana</li>
+<li>ELK Stack</li>
+<li>Jaeger / Zipkin</li>
+<li>New Relic / Datadog</li>
+</ul>
+</div>
+
+<!-- 10 -->
+<div class="section">
+<h2>🔟 Real Production Incidents</h2>
+<ul>
+<li>Memory leak crashes service after 6 hours</li>
+<li>Slow DB query brings down entire system</li>
+<li>One service failure causes chain failure</li>
+<li>Traffic spike causes timeout storm</li>
+</ul>
+
+<p><b>System Engineer Role:</b> Identify → fix → prevent recurrence</p>
+</div>
+
+<!-- 11 -->
+<div class="section">
+<h2>1️⃣1️⃣ Cloud & Infrastructure Awareness</h2>
+<ul>
+<li>Containers: Docker</li>
+<li>Orchestration: Kubernetes</li>
+<li>Cloud: AWS / Azure / GCP</li>
+<li>Auto-scaling & health probes</li>
+</ul>
+</div>
+
+<!-- 12 -->
+<div class="section">
+<h2>1️⃣2️⃣ Java Systems Engineer Takeaways</h2>
+<ul>
+<li>Performance issues are business issues</li>
+<li>Every millisecond matters at scale</li>
+<li>Systems must assume failure</li>
+<li>Design for recovery, not perfection</li>
+<li>Prevent issues before users notice</li>
+</ul>
+</div>
+
+</div>
+
+<div class="footer">
+Java Systems Engineer — Performance, Scalability & Reliability Guide
+</div>
+
+</body>
+</html>

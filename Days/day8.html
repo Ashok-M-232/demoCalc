@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Day 2 - Java Backend Developer</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Poppins',sans-serif;background:#0b1221;color:#fff;line-height:1.6}
+header{padding:25px 0;background:#0f1830;border-bottom:1px solid rgba(255,255,255,.1)}
+.container{width:90%;max-width:1150px;margin:auto}
+h1{font-size:34px;font-weight:700}
+.subtitle{color:#9da6c6;margin:8px 0}
+.tag{display:inline-block;margin-top:10px;padding:6px 12px;border-radius:8px;background:#1c2d5b;font-size:12px}
+
+.section{margin-top:25px;background:linear-gradient(145deg,#0f1830,#151f45);border:1px solid rgba(255,255,255,.1);border-radius:18px;padding:22px}
+.section h2{font-size:22px;margin-bottom:12px;color:#8bc5ff}
+.section h3{font-size:18px;margin-top:15px;margin-bottom:8px;color:#d7e4ff}
+
+ul{margin-left:20px}
+li{margin-bottom:6px}
+
+table{width:100%;border-collapse:collapse;margin-top:12px}
+th,td{padding:8px;border:1px solid rgba(255,255,255,.2)}
+th{background:#1c2d5b}
+
+.footer{text-align:center;margin:40px 0;color:#9aa6c7}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container">
+    <h1>DAY 2 — Java Backend Developer</h1>
+    <p class="subtitle">Business Logic, Feature Development & API Engineering</p>
+    <span class="tag">Core Product Engineering Role</span>
+  </div>
+</header>
+
+<div class="container">
+
+<!-- 1 -->
+<div class="section">
+<h2>1️⃣ What is a Java Backend Developer</h2>
+<p>
+A Java Backend Developer is responsible for building the <b>core business logic</b>
+that powers applications, APIs, and enterprise systems.
+</p>
+
+<h3>Core Responsibility</h3>
+<ul>
+<li>Design and implement backend features</li>
+<li>Convert business requirements into code</li>
+<li>Ensure data correctness and validations</li>
+<li>Expose functionality via APIs</li>
+<li>Fix functional and logical bugs</li>
+</ul>
+</div>
+
+<!-- 2 -->
+<div class="section">
+<h2>2️⃣ Real Applications We Build</h2>
+<table>
+<tr><th>System</th><th>Real Examples</th><th>Developer Responsibility</th></tr>
+<tr><td>User Management</td><td>Signup, Login, Roles</td><td>Auth logic, validation, security</td></tr>
+<tr><td>Payments</td><td>Orders, refunds</td><td>Transaction consistency</td></tr>
+<tr><td>Dashboards</td><td>Reports, analytics</td><td>Data aggregation</td></tr>
+<tr><td>APIs</td><td>Mobile/Web APIs</td><td>Correct responses & contracts</td></tr>
+<tr><td>Microservices</td><td>Independent services</td><td>Service boundaries</td></tr>
+</table>
+</div>
+
+<!-- 3 -->
+<div class="section">
+<h2>3️⃣ Java & Spring Stack (What We Use & WHY)</h2>
+<table>
+<tr><th>Layer</th><th>Technology</th><th>Real Usage</th></tr>
+<tr><td>Language</td><td>Java 8 / 11 / 17</td><td>Business logic & OOP</td></tr>
+<tr><td>Framework</td><td>Spring Boot</td><td>Rapid API development</td></tr>
+<tr><td>Web</td><td>Spring MVC / REST</td><td>Controllers & request flow</td></tr>
+<tr><td>Persistence</td><td>JPA / Hibernate</td><td>ORM & transactions</td></tr>
+<tr><td>Security</td><td>Spring Security</td><td>Auth & access control</td></tr>
+</table>
+</div>
+
+<!-- 4 -->
+<div class="section">
+<h2>4️⃣ Business Logic Development (CORE SKILL)</h2>
+<p>
+This is where backend developers spend most of their time.
+</p>
+
+<h3>Examples of Business Logic</h3>
+<ul>
+<li>Who can access which resource</li>
+<li>When to allow or reject a request</li>
+<li>How to calculate prices, discounts, limits</li>
+<li>What happens on failure or rollback</li>
+</ul>
+
+<h3>Real Case</h3>
+<ul>
+<li>User can cancel order only before shipping</li>
+<li>Payment retry allowed only 3 times</li>
+<li>Admin actions logged for audit</li>
+</ul>
+</div>
+
+<!-- 5 -->
+<div class="section">
+<h2>5️⃣ REST API Design & Development</h2>
+<table>
+<tr><th>Aspect</th><th>Developer Responsibility</th></tr>
+<tr><td>HTTP Methods</td><td>GET, POST, PUT, DELETE correctly</td></tr>
+<tr><td>Request Validation</td><td>@Valid, custom validators</td></tr>
+<tr><td>Response Structure</td><td>Status codes & JSON contracts</td></tr>
+<tr><td>Error Handling</td><td>Global exception handlers</td></tr>
+<tr><td>Versioning</td><td>/v1, /v2 APIs</td></tr>
+</table>
+</div>
+
+<!-- 6 -->
+<div class="section">
+<h2>6️⃣ Database Design & Transactions</h2>
+<h3>What We Do</h3>
+<ul>
+<li>Design tables & relationships</li>
+<li>Write efficient queries</li>
+<li>Maintain data integrity</li>
+</ul>
+
+<h3>Real Enterprise Scenarios</h3>
+<ul>
+<li>Order placed → payment fails → rollback</li>
+<li>Concurrent updates → prevent dirty data</li>
+<li>Large data → pagination & indexing</li>
+</ul>
+</div>
+
+<!-- 7 -->
+<div class="section">
+<h2>7️⃣ Error Handling & Debugging</h2>
+<table>
+<tr><th>Error Type</th><th>Developer Action</th></tr>
+<tr><td>Validation Error</td><td>Fix input rules</td></tr>
+<tr><td>Logical Bug</td><td>Correct business condition</td></tr>
+<tr><td>Data Issue</td><td>Fix queries & mappings</td></tr>
+<tr><td>API Failure</td><td>Handle edge cases</td></tr>
+</table>
+</div>
+
+<!-- 8 -->
+<div class="section">
+<h2>8️⃣ Testing (Mandatory in Real Projects)</h2>
+<ul>
+<li>Unit Testing (JUnit, Mockito)</li>
+<li>Service-level testing</li>
+<li>API testing</li>
+<li>Negative case testing</li>
+</ul>
+
+<p><b>Goal:</b> Ensure features work before reaching production</p>
+</div>
+
+<!-- 9 -->
+<div class="section">
+<h2>9️⃣ Collaboration in Real Teams</h2>
+<ul>
+<li>Work with frontend developers</li>
+<li>Coordinate with QA for test cases</li>
+<li>Support DevOps during deployments</li>
+<li>Assist L1/L2 support with fixes</li>
+</ul>
+</div>
+
+<!-- 10 -->
+<div class="section">
+<h2>🔟 Java Backend Developer Takeaways</h2>
+<ul>
+<li>You OWN features, not tickets</li>
+<li>Logic correctness is critical</li>
+<li>Bad backend = broken business</li>
+<li>Performance comes later, correctness first</li>
+<li>Clean code reduces future incidents</li>
+</ul>
+</div>
+
+</div>
+
+<div class="footer">
+Java Backend Developer — Business Logic & Feature Engineering Guide
+</div>
+
+</body>
+</html>

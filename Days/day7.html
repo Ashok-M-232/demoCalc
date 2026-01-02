@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Java Application Support</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Poppins',sans-serif;background:#0b1221;color:#fff;line-height:1.6}
+header{padding:25px 0;background:#0f1830;border-bottom:1px solid rgba(255,255,255,.1)}
+.container{width:90%;max-width:1150px;margin:auto}
+h1{font-size:34px;font-weight:700}
+.subtitle{color:#9da6c6;margin:8px 0}
+.tag{display:inline-block;margin-top:10px;padding:6px 12px;border-radius:8px;background:#1c2d5b;font-size:12px}
+
+.section{margin-top:25px;background:linear-gradient(145deg,#0f1830,#151f45);border:1px solid rgba(255,255,255,.1);border-radius:18px;padding:22px}
+.section h2{font-size:22px;margin-bottom:12px;color:#8bc5ff}
+.section h3{font-size:18px;margin-top:15px;margin-bottom:8px;color:#d7e4ff}
+
+ul{margin-left:20px}
+li{margin-bottom:6px}
+
+table{width:100%;border-collapse:collapse;margin-top:12px}
+th,td{padding:8px;border:1px solid rgba(255,255,255,.2)}
+th{background:#1c2d5b}
+
+.footer{text-align:center;margin:40px 0;color:#9aa6c7}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container">
+    <h1>Java Application Support Engineer (Support & Operations Level)</h1>
+    <p class="subtitle">Enterprise Production Support — Java / Spring Applications</p>
+    <span class="tag">Real-World Support Role</span>
+  </div>
+</header>
+
+<div class="container">
+
+<!-- 1 -->
+<div class="section">
+<h2>1️⃣ What is Java Application Support</h2>
+<p>
+Java Application Support ensures that <b>already deployed Java/Spring applications</b>
+run smoothly in production without downtime.
+</p>
+
+<h3>Support Engineer Responsibility</h3>
+<ul>
+<li>Keep applications running 24/7</li>
+<li>Monitor logs, errors, and alerts</li>
+<li>Handle production incidents</li>
+<li>Coordinate with developers & DevOps</li>
+</ul>
+</div>
+
+<!-- 2 -->
+<div class="section">
+<h2>2️⃣ Applications We Support</h2>
+<table>
+<tr><th>Application Type</th><th>Examples</th><th>L1 Support Focus</th></tr>
+<tr><td>Web Apps</td><td>Spring MVC, JSP</td><td>Server errors, page failures</td></tr>
+<tr><td>REST APIs</td><td>Spring Boot</td><td>500 errors, API downtime</td></tr>
+<tr><td>Batch Jobs</td><td>Spring Batch</td><td>Job failures, data mismatch</td></tr>
+<tr><td>Microservices</td><td>Spring Cloud</td><td>Service availability, health checks</td></tr>
+</table>
+</div>
+
+<!-- 3 -->
+<div class="section">
+<h2>3️⃣ Java & Spring Stack (What We Use)</h2>
+<table>
+<tr><th>Layer</th><th>Technology</th><th>L1 Usage</th></tr>
+<tr><td>Language</td><td>Java 8 / 11</td><td>Read stack traces</td></tr>
+<tr><td>Framework</td><td>Spring / Spring Boot</td><td>Understand flow & configs</td></tr>
+<tr><td>Build Tool</td><td>Maven / Gradle</td><td>Check build issues</td></tr>
+<tr><td>Server</td><td>Tomcat / JBoss</td><td>Restart & deploy apps</td></tr>
+<tr><td>Database</td><td>MySQL / Oracle</td><td>Verify data issues</td></tr>
+</table>
+</div>
+
+<!-- 4 -->
+<div class="section">
+<h2>4️⃣ Production Issues We Handle</h2>
+<ul>
+<li>Application not starting</li>
+<li>500 Internal Server Error</li>
+<li>API timeout issues</li>
+<li>Database connection failure</li>
+<li>High CPU or memory usage</li>
+</ul>
+
+<h3>Typical Action</h3>
+<ul>
+<li>Check logs</li>
+<li>Restart service</li>
+<li>Verify health</li>
+<li>Escalate with evidence</li>
+</ul>
+</div>
+
+<!-- 5 -->
+<div class="section">
+<h2>5️⃣ Log Analysis (MOST IMPORTANT)</h2>
+<p>L1 engineers spend most time here.</p>
+
+<table>
+<tr><th>Log Type</th><th>Tool</th><th>Purpose</th></tr>
+<tr><td>Application Logs</td><td>logback / log4j</td><td>Exceptions & errors</td></tr>
+<tr><td>Server Logs</td><td>Tomcat logs</td><td>Startup & crash issues</td></tr>
+<tr><td>System Logs</td><td>Linux</td><td>CPU, disk issues</td></tr>
+</table>
+</div>
+
+<!-- 6 -->
+<div class="section">
+<h2>6️⃣ Common Java Errors</h2>
+<ul>
+<li>NullPointerException</li>
+<li>OutOfMemoryError</li>
+<li>SQL Exception</li>
+<li>Connection Timeout</li>
+<li>BeanCreationException</li>
+</ul>
+
+<p><b>L1 Role:</b> Identify error → capture logs → escalate</p>
+</div>
+
+<!-- 7 -->
+<div class="section">
+<h2>7️⃣ Monitoring & Alerting Tools</h2>
+<table>
+<tr><th>Tool</th><th>Usage</th></tr>
+<tr><td>Application Monitoring</td><td>AppDynamics, New Relic</td></tr>
+<tr><td>Logs</td><td>ELK Stack</td></tr>
+<tr><td>Health Checks</td><td>Spring Actuator</td></tr>
+<tr><td>Alerts</td><td>Email / PagerDuty</td></tr>
+</table>
+</div>
+
+<!-- 8 -->
+<div class="section">
+<h2>8️⃣ Incident Handling Flow</h2>
+<ol>
+<li>Alert received</li>
+<li>Check application status</li>
+<li>Analyze logs</li>
+<li>Apply workaround (restart)</li>
+<li>Escalate to L2/L3</li>
+</ol>
+</div>
+
+<!-- 9 -->
+<div class="section">
+<h2>9️⃣ Deployment Awareness (Not Deployment)</h2>
+<ul>
+<li>Understand CI/CD flow</li>
+<li>Verify deployment success</li>
+<li>Rollback confirmation</li>
+<li>Post-deployment monitoring</li>
+</ul>
+</div>
+
+<!-- 10 -->
+<div class="section">
+<h2>🔟 Java Support Takeaways</h2>
+<ul>
+<li>Strong log reading skills</li>
+<li>Basic Spring understanding</li>
+<li>Linux & server basics</li>
+<li>Incident communication</li>
+<li>Stability over coding</li>
+</ul>
+</div>
+
+</div>
+
+<div class="footer">
+Java Application Support — Enterprise Professional Guide
+</div>
+
+</body>
+</html>
